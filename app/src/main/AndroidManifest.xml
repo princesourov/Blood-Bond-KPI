@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".dashboard.allUser.MainActivity"
+            android:name=".dashboard.appDashboard.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.BloodBondKPI.App.Ber"></activity>
     </application>

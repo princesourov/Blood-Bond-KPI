@@ -8,7 +8,7 @@ import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.epikason.bloodbondkpi.R
-import com.epikason.bloodbondkpi.dashboard.allUser.MainActivity
+import com.epikason.bloodbondkpi.dashboard.appDashboard.MainActivity
 
 @Suppress("DEPRECATION")
 class SplashScreen : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.epikason.bloodbondkpi.dashboard.allUser
+package com.epikason.bloodbondkpi.dashboard.appDashboard
 
 import android.content.Intent
 import android.os.Bundle
