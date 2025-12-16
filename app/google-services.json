@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "873319974914",
+    "project_id": "blood-bond-kpi",
+    "storage_bucket": "blood-bond-kpi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873319974914:android:d99ac86b400f9119db3f1b",
+        "android_client_info": {
+          "package_name": "com.epikason.bloodbondkpi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArN_JbHFjSMr3BqsXUgxRWnBJmzu2RaRY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

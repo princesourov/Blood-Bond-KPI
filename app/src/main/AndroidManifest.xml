@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodBondKPI">
         <activity
-            android:name=".MainActivity"
+            android:name=".auth.AuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".starter.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +23,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".dashboard.allUser.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BloodBondKPI.App.Ber"></activity>
     </application>
 
 </manifest>
