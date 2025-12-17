@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.epikason.bloodbondkpi.dashboard.appDashboard.home.HomeFragment"
+        android:name="com.epikason.bloodbondkpi.views.dashboard.appDashboard.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/donerListFragment"
-        android:name="com.epikason.bloodbondkpi.dashboard.appDashboard.donerlist.DonerListFragment"
+        android:name="com.epikason.bloodbondkpi.views.dashboard.appDashboard.donerlist.DonerListFragment"
         android:label="fragment_doner_list"
         tools:layout="@layout/fragment_doner_list" />
     <fragment
         android:id="@+id/toolsFragment"
-        android:name="com.epikason.bloodbondkpi.dashboard.appDashboard.tools.ToolsFragment"
+        android:name="com.epikason.bloodbondkpi.views.dashboard.appDashboard.tools.ToolsFragment"
         android:label="fragment_tools"
         tools:layout="@layout/fragment_tools" />
 </navigation>

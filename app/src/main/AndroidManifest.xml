@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".di.MyApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,10 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodBondKPI">
         <activity
-            android:name=".auth.AuthActivity"
+            android:name=".views.dashboard.userDashboard.UserDashboard"
             android:exported="false" />
         <activity
-            android:name=".starter.SplashScreen"
+            android:name=".views.auth.AuthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".views.starter.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,9 +28,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".dashboard.appDashboard.MainActivity"
+            android:name=".views.dashboard.appDashboard.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.BloodBondKPI.App.Ber"></activity>
+            android:theme="@style/Theme.BloodBondKPI.App.Ber" />
     </application>
 
 </manifest>

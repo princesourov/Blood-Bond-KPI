@@ -1,0 +1,171 @@
+package com.epikason.bloodbondkpi.views.dashboard.userDashboard.addRequest
+
+
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
+import android.widget.ArrayAdapter
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
+import androidx.navigation.fragment.findNavController
+import com.epikason.bloodbondkpi.R
+import com.epikason.bloodbondkpi.base.BaseFragment
+import com.epikason.bloodbondkpi.core.DataState
+import com.epikason.bloodbondkpi.core.extract
+import com.epikason.bloodbondkpi.core.isEmpty
+import com.epikason.bloodbondkpi.data.model.BloodRequest
+import com.epikason.bloodbondkpi.databinding.FragmentAddRequestBinding
+import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
+import java.util.Calendar
+
+@AndroidEntryPoint
+class AddRequestFragment :
+    BaseFragment<FragmentAddRequestBinding>(FragmentAddRequestBinding::inflate) {
+    private val viewModel: AddRequestViewModel by viewModels()
+
+    val currentUser = FirebaseAuth.getInstance().currentUser
+    val uid = currentUser?.uid ?: ""
+
+    override fun setListener() {
+        setupDropdowns()
+        setupDatePicker()
+        setupTimePicker()
+        setupSubmit()
+    }
+
+    override fun allObserver() {
+        registrationResponse()
+    }
+
+    private fun setupDropdowns() {
+
+        val bloodGroups = listOf(
+            "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"
+        )
+
+        val emergencyLevels = listOf(
+            "Normal", "Urgent", "Emergency"
+        )
+
+        val bloodAdapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_list_item_1,
+            bloodGroups
+        )
+
+        val emergencyAdapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_list_item_1,
+            emergencyLevels
+        )
+
+        binding.spinnerBloodGroup.setAdapter(bloodAdapter)
+        binding.spinnerEmergency.setAdapter(emergencyAdapter)
+    }
+
+    private fun setupDatePicker() {
+        binding.etDate.setOnClickListener {
+            val cal = Calendar.getInstance()
+
+            DatePickerDialog(
+                requireContext(),
+                { _, year, month, day ->
+                    binding.etDate.setText(
+                        "$day/${month + 1}/$year"
+                    )
+                },
+                cal.get(Calendar.YEAR),
+                cal.get(Calendar.MONTH),
+                cal.get(Calendar.DAY_OF_MONTH)
+            ).show()
+        }
+    }
+
+
+    private fun setupTimePicker() {
+        binding.etTime.setOnClickListener {
+            val cal = Calendar.getInstance()
+
+            TimePickerDialog(
+                requireContext(),
+                { _, hour, minute ->
+                    // Convert hour to 12-hour format + AM/PM
+                    val amPm = if (hour >= 12) "PM" else "AM"
+                    val hour12 = if (hour % 12 == 0) 12 else hour % 12
+
+                    binding.etTime.setText(
+                        String.format("%02d:%02d %s", hour12, minute, amPm)
+                    )
+                },
+                cal.get(Calendar.HOUR_OF_DAY),
+                cal.get(Calendar.MINUTE),
+                false
+            ).show()
+        }
+    }
+
+
+    private fun setupSubmit() {
+        with(binding) {
+            binding.btnSubmitRequest.setOnClickListener {
+                spinnerBloodGroup.isEmpty()
+                etUnits.isEmpty()
+                etPatientName.isEmpty()
+                etHospitalName.isEmpty()
+                etDate.isEmpty()
+                etTime.isEmpty()
+                etReason.isEmpty()
+                spinnerEmergency.isEmpty()
+                etPhone.isEmpty()
+
+                if (!spinnerBloodGroup.isEmpty() && !etUnits.isEmpty() && !etPatientName.isEmpty()
+                    && !etHospitalName.isEmpty() && !etDate.isEmpty() && !etTime.isEmpty()
+                    && !etReason.isEmpty() && !spinnerEmergency.isEmpty() && !etPhone.isEmpty()
+                ) {
+
+                    val user = BloodRequest(
+                        spinnerBloodGroup.extract(),
+                        etUnits.extract(),
+                        etPatientName.extract(),
+                        etHospitalName.extract(),
+                        etDate.extract(),
+                        etTime.extract(),
+                        etReason.extract(),
+                        spinnerEmergency.extract(),
+                        etPhone.extract(),
+                        uid
+                    )
+                    viewModel.addRequest(user)
+                }
+            }
+        }
+    }
+
+    private fun registrationResponse() {
+        viewModel.addRequestResponse.observe(viewLifecycleOwner) {
+            when (it) {
+                is DataState.Error -> {
+                    loadingDialog?.dismiss()
+                    Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
+                }
+
+                is DataState.Loading -> {
+                    loadingDialog?.show()
+                }
+
+                is DataState.Success -> {
+                    loadingDialog?.dismiss()
+                    findNavController().navigate(
+                        R.id.action_addRequestFragment_to_requestListFragment2,
+                        null,
+                        NavOptions.Builder()
+                            .setPopUpTo(R.id.addRequestFragment, true)
+                            .build()
+                    )
+                }
+            }
+
+        }
+    }
+}

@@ -5,6 +5,42 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dashboard.userDashboard.UserDashboardActivity">
+    tools:context=".views.dashboard.userDashboard.UserDashboard">
 
+
+    <fragment
+        android:id="@+id/fragmentContainerView2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/navContainer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/user_nav" />
+
+    <LinearLayout
+        android:id="@+id/navContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:padding="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#646363">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_60sdp"
+                app:itemIconTint="@color/nav_item_selector"
+                app:itemTextColor="@color/nav_item_selector"
+                app:labelVisibilityMode="selected"
+                app:menu="@menu/user_menu" />
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

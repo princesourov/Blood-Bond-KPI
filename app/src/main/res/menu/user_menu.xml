@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/requestListFragment"
+        android:icon="@drawable/blood_request"
+        android:title="Request List"/>
+    <item
+        android:id="@+id/addRequestFragment"
+        android:icon="@drawable/add"
+        android:title="Add Request"/>
+    <item
+        android:id="@+id/userProfileFragment"
+        android:icon="@drawable/profile"
+        android:title="Profile"/>
+
+</menu>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav"
+    app:startDestination="@id/requestListFragment">
+
+    <fragment
+        android:id="@+id/requestListFragment"
+        android:name="com.epikason.bloodbondkpi.views.dashboard.userDashboard.requestList.RequestListFragment"
+        android:label="fragment_request_list"
+        tools:layout="@layout/fragment_request_list" />
+    <fragment
+        android:id="@+id/addRequestFragment"
+        android:name="com.epikason.bloodbondkpi.views.dashboard.userDashboard.addRequest.AddRequestFragment"
+        android:label="fragment_add_request"
+        tools:layout="@layout/fragment_add_request" >
+        <action
+            android:id="@+id/action_addRequestFragment_to_requestListFragment2"
+            app:destination="@id/requestListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.epikason.bloodbondkpi.views.dashboard.userDashboard.profile.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" />
+</navigation>
