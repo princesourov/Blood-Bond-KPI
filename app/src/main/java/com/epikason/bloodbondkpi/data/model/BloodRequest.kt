@@ -1,14 +1,14 @@
 package com.epikason.bloodbondkpi.data.model
 
 data class BloodRequest(
-    val bloodGroup : String,
-    val units : String,
-    val pName : String,
-    val hName : String,
-    val date : String,
-    val time : String,
-    val reason : String,
-    val eLevel : String,
-    val number : String,
-    var userID : String
+    var bloodGroup: String = "",
+    var units: String = "",
+    var pName: String = "",
+    var hName: String = "",
+    var date: String = "",
+    var time: String = "",
+    var reason: String = "",
+    var eLevel: String = "",
+    var number: String = "",
+    var userID: String = ""
 )

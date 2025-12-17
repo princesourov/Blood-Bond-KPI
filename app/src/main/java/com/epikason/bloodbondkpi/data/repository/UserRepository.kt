@@ -17,7 +17,7 @@ class UserRepository @Inject constructor(
     }
 
     override fun bloodRequest(user: BloodRequest): Task<Void> {
-        return  db.collection(Nodes.BLOOD_REQUEST).document(user.userID).set(user)
+        return db.collection(Nodes.BLOOD_REQUEST).document().set(user)
     }
 
     override fun getBloodRequestByUserID(userID: String): Task<QuerySnapshot> {
