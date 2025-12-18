@@ -23,4 +23,11 @@ class UserRepository @Inject constructor(
     override fun getBloodRequestByUserID(userID: String): Task<QuerySnapshot> {
        return db.collection(Nodes.BLOOD_REQUEST).whereEqualTo("userID", userID).get()
     }
+    override fun getAllRequest(): Task<QuerySnapshot> {
+        return db.collection(Nodes.BLOOD_REQUEST).get()
+    }
+
+    override fun getAllDoner(): Task<QuerySnapshot> {
+        return db.collection(Nodes.USERINFO).get()
+    }
 }

@@ -1,19 +1,20 @@
-package com.epikason.bloodbondkpi.views.dashboard.userDashboard.requestList
+package com.epikason.bloodbondkpi.views.dashboard.appDashboard.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.epikason.bloodbondkpi.data.model.BloodRequest
-import com.epikason.bloodbondkpi.databinding.ItemBloodRequestBinding
+import com.epikason.bloodbondkpi.databinding.ItemAllpostRequestBinding
 
-class BloodRequestAdapter(val requestBloodList: List<BloodRequest>) : RecyclerView.Adapter<BloodRequestAdapter.RequestViewHolder>() {
+class AllBloodRequestAdapter(val requestBloodList: List<BloodRequest>) : RecyclerView.Adapter<AllBloodRequestAdapter.RequestViewHolder>() {
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): RequestViewHolder {
 
         return RequestViewHolder(
-            ItemBloodRequestBinding.inflate(
+            ItemAllpostRequestBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -44,6 +45,6 @@ class BloodRequestAdapter(val requestBloodList: List<BloodRequest>) : RecyclerVi
         return requestBloodList.size
     }
 
-    class RequestViewHolder(val binding: ItemBloodRequestBinding) :
+    class RequestViewHolder(val binding: ItemAllpostRequestBinding) :
         RecyclerView.ViewHolder(binding.root)
 }

@@ -102,6 +102,7 @@ class UserDetailsFragment :
                         etRoll.extract(),
                         etPhone.extract(),
                         etBio.extract()?:"",
+                        "",
                         uid
 
                     )
