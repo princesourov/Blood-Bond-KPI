@@ -26,6 +26,7 @@ class RequestListViewModel @Inject constructor(
             document.documents.forEach { doc ->
 
                 doc.toObject(BloodRequest::class.java)?.let {
+                    it.documentId = doc.id
                     bloodRequestList.add(it)
                 }
             }

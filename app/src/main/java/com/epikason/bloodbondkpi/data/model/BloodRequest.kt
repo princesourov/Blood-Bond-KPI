@@ -10,5 +10,6 @@ data class BloodRequest(
     var reason: String = "",
     var eLevel: String = "",
     var number: String = "",
-    var userID: String = ""
+    var userID: String = "",
+    var documentId: String = ""
 )

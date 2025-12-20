@@ -1,8 +1,6 @@
 package com.epikason.bloodbondkpi.data.repository
 
 import com.epikason.bloodbondkpi.core.Nodes
-import com.epikason.bloodbondkpi.data.model.BloodRequest
-import com.epikason.bloodbondkpi.data.model.UserInfo
 import com.epikason.bloodbondkpi.data.model.UserLogIn
 import com.epikason.bloodbondkpi.data.model.UserRegistration
 import com.epikason.bloodbondkpi.data.services.AuthService

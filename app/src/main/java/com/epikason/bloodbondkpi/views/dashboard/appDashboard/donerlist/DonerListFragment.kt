@@ -5,13 +5,9 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.epikason.bloodbondkpi.base.BaseFragment
 import com.epikason.bloodbondkpi.core.DataState
-import com.epikason.bloodbondkpi.data.model.BloodRequest
 import com.epikason.bloodbondkpi.data.model.UserInfo
 import com.epikason.bloodbondkpi.databinding.FragmentDonerListBinding
-import com.epikason.bloodbondkpi.views.dashboard.appDashboard.home.HomeViewModel
-import com.epikason.bloodbondkpi.views.dashboard.userDashboard.requestList.BloodRequestAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.getValue
 
 @AndroidEntryPoint
 class DonerListFragment : BaseFragment<FragmentDonerListBinding>(FragmentDonerListBinding::inflate) {

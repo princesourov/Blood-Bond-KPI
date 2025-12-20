@@ -3,36 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
-    app:cardBackgroundColor="#F4B3B3"
+    android:layout_margin="10dp"
     app:cardCornerRadius="@dimen/_12sdp"
     app:cardElevation="4dp"
     app:strokeWidth="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_200sdp"
+        android:background="@drawable/cardview_bg"
         android:orientation="vertical"
         android:padding="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/baloo"
-            android:text="Blood Request"
-            android:textColor="@color/primary_color"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:text="Blood Request"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/btnCall"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/call" />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/tvPatientName"
             android:layout_width="wrap_content"
-            android:textStyle="bold"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Patient Name: Iqbal Hossain Sourov"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -44,8 +56,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Blood group: "
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvBloodGroup"
@@ -53,8 +66,8 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/tvBloodGroupLabel"
                 android:text="O+"
-                android:textColor="@color/primary_color"
-                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -63,8 +76,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="Units: 3 Bag"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -77,8 +91,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Donation Date: 05/12/2025"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvLevel"
@@ -86,9 +101,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="Emergency"
-                android:textStyle="bold"
-                android:textColor="@color/primary_color"
-                android:textSize="16sp" />
+                android:textColor="#F8D545"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -101,8 +116,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Donation Time : 10:30 AM"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvReason"
@@ -110,8 +126,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:text="Scissore"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <TextView
@@ -120,17 +137,33 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="Location : Kurigram Shodor Hospital"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tvMobile"
-            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Mobile: 01300156566"
-            android:textColor="@android:color/black"
-            android:textSize="16sp" />
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:id="@+id/tvmob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile: "
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvMobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01300156566"
+                android:layout_toEndOf="@id/tvmob"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

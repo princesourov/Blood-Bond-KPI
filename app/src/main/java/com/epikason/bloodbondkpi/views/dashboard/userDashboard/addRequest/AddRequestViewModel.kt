@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.epikason.bloodbondkpi.core.DataState
 import com.epikason.bloodbondkpi.data.model.BloodRequest
-import com.epikason.bloodbondkpi.data.model.UserInfo
 import com.epikason.bloodbondkpi.data.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jakarta.inject.Inject

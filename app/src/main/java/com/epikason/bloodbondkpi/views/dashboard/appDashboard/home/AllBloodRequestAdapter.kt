@@ -1,7 +1,9 @@
 package com.epikason.bloodbondkpi.views.dashboard.appDashboard.home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.epikason.bloodbondkpi.data.model.BloodRequest
 import com.epikason.bloodbondkpi.databinding.ItemAllpostRequestBinding
@@ -36,7 +38,16 @@ class AllBloodRequestAdapter(val requestBloodList: List<BloodRequest>) : Recycle
                 tvTime.text = "Donation Time: ${it.time}"
                 tvReason.text = it.reason
                 tvLocation.text = "Location: ${it.hName}"
-                tvMobile.text = "Mobile: ${it.number}"
+                tvMobile.text = it.number
+
+                btnCall.setOnClickListener {
+                    val donorCall = tvMobile.text.toString()
+                    val intent = Intent(Intent.ACTION_DIAL).apply {
+                        data = "tel:$donorCall".toUri()
+                    }
+                    holder.itemView.context.startActivity(intent)
+                }
+
             }
         }
     }

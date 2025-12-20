@@ -14,6 +14,7 @@
         android:theme="@style/Theme.BloodBondKPI">
         <activity
             android:name=".views.dashboard.userDashboard.UserDashboard"
+            android:theme="@style/Theme.BloodBondKPI.App.Ber"
             android:exported="false" />
         <activity
             android:name=".views.auth.AuthActivity"

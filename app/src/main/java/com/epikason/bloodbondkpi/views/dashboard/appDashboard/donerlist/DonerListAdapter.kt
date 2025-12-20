@@ -3,11 +3,8 @@ package com.epikason.bloodbondkpi.views.dashboard.appDashboard.donerlist
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.epikason.bloodbondkpi.data.model.BloodRequest
 import com.epikason.bloodbondkpi.data.model.UserInfo
-import com.epikason.bloodbondkpi.databinding.ItemAllpostRequestBinding
 import com.epikason.bloodbondkpi.databinding.ItemDonerListBinding
-import com.epikason.bloodbondkpi.views.dashboard.appDashboard.home.AllBloodRequestAdapter
 
 class DonerListAdapter(val donerList: List<UserInfo>) : RecyclerView.Adapter<DonerListAdapter.DonerListViewHolder>() {
 

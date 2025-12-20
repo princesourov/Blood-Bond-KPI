@@ -46,7 +46,7 @@ class RequestListFragment :
     private fun setDataToRV(list: List<BloodRequest>) {
         binding.rvBloodRequest.apply {
             layoutManager = LinearLayoutManager(requireContext())
-            adapter = BloodRequestAdapter(list)
+            adapter = BloodRequestAdapter(list as MutableList<BloodRequest>)
         }
     }
 

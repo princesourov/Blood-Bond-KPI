@@ -6,21 +6,16 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.navigation.NavOptions
-import androidx.navigation.fragment.findNavController
-import com.epikason.bloodbondkpi.R
 import com.epikason.bloodbondkpi.base.BaseFragment
 import com.epikason.bloodbondkpi.core.DataState
 import com.epikason.bloodbondkpi.core.extract
 import com.epikason.bloodbondkpi.core.isEmpty
 import com.epikason.bloodbondkpi.data.model.UserInfo
 import com.epikason.bloodbondkpi.databinding.FragmentUserDetailsBinding
-import com.epikason.bloodbondkpi.views.auth.register.RegistrationViewModel
 import com.epikason.bloodbondkpi.views.dashboard.userDashboard.UserDashboard
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
-import kotlin.getValue
 
 @AndroidEntryPoint
 class UserDetailsFragment :

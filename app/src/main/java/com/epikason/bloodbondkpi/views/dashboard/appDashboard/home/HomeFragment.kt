@@ -6,9 +6,7 @@ import com.epikason.bloodbondkpi.base.BaseFragment
 import com.epikason.bloodbondkpi.core.DataState
 import com.epikason.bloodbondkpi.data.model.BloodRequest
 import com.epikason.bloodbondkpi.databinding.FragmentHomeBinding
-import com.epikason.bloodbondkpi.views.dashboard.userDashboard.requestList.BloodRequestAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.getValue
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {

@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    app:cardBackgroundColor="#A0F891"
     app:cardCornerRadius="24dp"
     app:cardElevation="4dp"
     app:strokeWidth="2dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_215sdp"
+        android:background="@drawable/card_bc"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -23,6 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Doner Details"
+                android:fontFamily="@font/baloo"
                 android:textColor="@color/primary_color"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -56,7 +57,8 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:text="Email : princesourov41@gmail.com"
             android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvmobile"
@@ -65,7 +67,8 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:text="Mobile : 01300156566"
             android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -78,7 +81,8 @@
                 android:layout_height="wrap_content"
                 android:text="Gender : Male"
                 android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvDOB"
@@ -87,7 +91,8 @@
                 android:layout_alignParentEnd="true"
                 android:text="Date of Birth: 01-08-2003"
                 android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -101,7 +106,8 @@
                 android:layout_height="wrap_content"
                 android:text="Department : CST"
                 android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvSeason"
@@ -110,7 +116,8 @@
                 android:layout_alignParentEnd="true"
                 android:text="Season: 21-22"
                 android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -124,7 +131,8 @@
                 android:layout_height="wrap_content"
                 android:text="Roll: 611867"
                 android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvLastDonate"
@@ -133,7 +141,8 @@
                 android:layout_alignParentEnd="true"
                 android:text="Last Donate : 29-12-2026"
                 android:textColor="@android:color/black"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <TextView
@@ -144,7 +153,8 @@
             android:lineSpacingExtra="2dp"
             android:text="Bio :hruirhreosjgldsjgjdfigjrirvj"
             android:textColor="@android:color/black"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

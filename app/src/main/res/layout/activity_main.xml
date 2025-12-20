@@ -36,18 +36,13 @@
                 android:textSize="@dimen/_30ssp"
                 android:textStyle="bold" />
 
-            <com.google.android.material.button.MaterialButton
+            <ImageView
                 android:id="@+id/btnGoProfile"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
                 android:layout_gravity="center"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:text="Go Profile"
-                android:textAllCaps="false"
-                android:textColor="@color/primary_color"
-                android:textStyle="bold"
-                app:strokeColor="@color/primary_color" />
+                android:layout_marginStart="@dimen/_35sdp"
+                android:src="@drawable/user" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
