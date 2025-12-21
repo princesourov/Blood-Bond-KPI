@@ -1,7 +1,9 @@
 package com.epikason.bloodbondkpi.views.dashboard.appDashboard.donerlist
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
 import com.epikason.bloodbondkpi.data.model.UserInfo
 import com.epikason.bloodbondkpi.databinding.ItemDonerListBinding
@@ -31,7 +33,7 @@ class DonerListAdapter(val donerList: List<UserInfo>) : RecyclerView.Adapter<Don
                 tvBloodGroup.text = it.bloodGroup
                 tvDonerName.text = "Doner Name: ${it.name}"
                 tvEmail.text = "Email: ${it.email}"
-                tvmobile.text = "Mobile: ${it.phon}"
+                tvMobile.text =it.phon
                 tvGender.text = "Gender: ${it.gender}"
                 tvDOB.text = "Date of Birth: ${it.dateOfBirth}"
                 tvDepartment.text = "Department: ${it.department}"
@@ -39,6 +41,14 @@ class DonerListAdapter(val donerList: List<UserInfo>) : RecyclerView.Adapter<Don
                 tvRoll.text = "Roll: ${it.roll}"
                 tvLastDonate.text = "Last Donate: ${it.lastDonate}"
                 tvStatus.text = "Status: ${it.status}"
+
+                root.setOnClickListener {
+                    val donorCall = tvMobile.text.toString()
+                    val intent = Intent(Intent.ACTION_DIAL).apply {
+                        data = "tel:$donorCall".toUri()
+                    }
+                    holder.itemView.context.startActivity(intent)
+                }
             }
         }
     }

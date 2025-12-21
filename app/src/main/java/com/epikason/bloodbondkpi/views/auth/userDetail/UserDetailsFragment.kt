@@ -96,8 +96,8 @@ class UserDetailsFragment :
                         spinnerDepartment.extract(),
                         etRoll.extract(),
                         etPhone.extract(),
-                        "",
-                        "",
+                        "Not Set",
+                        "First Time",
                         uid
 
                     )
