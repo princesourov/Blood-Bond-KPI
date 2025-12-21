@@ -96,7 +96,7 @@ class UserDetailsFragment :
                         spinnerDepartment.extract(),
                         etRoll.extract(),
                         etPhone.extract(),
-                        etBio.extract()?:"",
+                        "",
                         "",
                         uid
 

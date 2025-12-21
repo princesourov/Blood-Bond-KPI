@@ -10,7 +10,7 @@ data class UserInfo(
     var department: String = "",
     var roll: String = "",
     var phon: String = "",
-    var bio: String = "",
+    var status: String = "",
     var lastDonate: String = "",
     var userID: String = ""
 )

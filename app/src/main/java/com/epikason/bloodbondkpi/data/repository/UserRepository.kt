@@ -13,7 +13,7 @@ class UserRepository @Inject constructor(
     private val db: FirebaseFirestore
 ) : UserService {
     override fun userDetails(user: UserInfo): Task<Void> {
-        return  db.collection(Nodes.USERINFO).document(user.userID).set(user)
+        return db.collection(Nodes.USERINFO).document(user.userID).set(user)
     }
 
     override fun bloodRequest(user: BloodRequest): Task<Void> {
@@ -21,8 +21,9 @@ class UserRepository @Inject constructor(
     }
 
     override fun getBloodRequestByUserID(userID: String): Task<QuerySnapshot> {
-       return db.collection(Nodes.BLOOD_REQUEST).whereEqualTo("userID", userID).get()
+        return db.collection(Nodes.BLOOD_REQUEST).whereEqualTo("userID", userID).get()
     }
+
     override fun getAllRequest(): Task<QuerySnapshot> {
         return db.collection(Nodes.BLOOD_REQUEST).get()
     }
@@ -30,4 +31,13 @@ class UserRepository @Inject constructor(
     override fun getAllDoner(): Task<QuerySnapshot> {
         return db.collection(Nodes.USERINFO).get()
     }
+
+    override fun userDetailsByUserID(userID: String): Task<QuerySnapshot> {
+        return db.collection(Nodes.USERINFO).whereEqualTo("userID", userID).get()
+    }
+
+    override fun updateUser(userID: String, data: Map<String, Any>): Task<Void> {
+        return db.collection(Nodes.USERINFO).document(userID).update(data)
+    }
+
 }

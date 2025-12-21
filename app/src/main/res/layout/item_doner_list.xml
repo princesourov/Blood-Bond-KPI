@@ -146,12 +146,12 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/tvBio"
+            android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_5sdp"
             android:lineSpacingExtra="2dp"
-            android:text="Bio :hruirhreosjgldsjgjdfigjrirvj"
+            android:text="Status: Interested"
             android:textColor="@android:color/black"
             android:textSize="14sp"
             android:textStyle="bold" />

@@ -38,8 +38,7 @@ class DonerListAdapter(val donerList: List<UserInfo>) : RecyclerView.Adapter<Don
                 tvSeason.text = "Season: ${it.season}"
                 tvRoll.text = "Roll: ${it.roll}"
                 tvLastDonate.text = "Last Donate: ${it.lastDonate}"
-                tvBio.text = "Bio: ${it.bio}"
-
+                tvStatus.text = "Status: ${it.status}"
             }
         }
     }

@@ -11,4 +11,6 @@ interface UserService {
     fun getBloodRequestByUserID(userID : String): Task<QuerySnapshot>
     fun getAllRequest(): Task<QuerySnapshot>
     fun getAllDoner(): Task<QuerySnapshot>
+    fun userDetailsByUserID(userID : String): Task<QuerySnapshot>
+    fun updateUser(userID: String, data: Map<String, Any>):Task<Void>
 }
