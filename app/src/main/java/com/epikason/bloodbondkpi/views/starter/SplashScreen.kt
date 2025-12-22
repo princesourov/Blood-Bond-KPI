@@ -19,7 +19,6 @@ class SplashScreen : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_splash_screen)
 
-
         val splashLogo: ImageView = findViewById(R.id.splash_logo)
         val fadeIn = AnimationUtils.loadAnimation(this, android.R.anim.fade_in)
         splashLogo.startAnimation(fadeIn)

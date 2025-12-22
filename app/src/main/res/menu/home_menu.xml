@@ -3,14 +3,15 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/home"
-        android:title="Home"/>
+        android:title="Home" />
     <item
         android:id="@+id/donerListFragment"
         android:icon="@drawable/blood_doner_list"
-        android:title="All Doner List"/>
+        android:title="All Doner List" />
+
     <item
         android:id="@+id/toolsFragment"
         android:icon="@drawable/others"
-        android:title="Tools"/>
+        android:title="Tools" />
 
 </menu>

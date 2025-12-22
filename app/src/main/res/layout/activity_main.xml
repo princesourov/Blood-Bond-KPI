@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,31 +18,31 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="match_parent"
-                android:src="@drawable/app_logo" />
-
+            android:layout_height="wrap_content"
+            android:background="@color/primary_color"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center"
+            android:orientation="vertical">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="Blood Bond KPI"
                 android:fontFamily="@font/afont"
-                android:textColor="@color/primary_color"
+                android:textColor="@color/white"
                 android:textSize="@dimen/_30ssp"
                 android:textStyle="bold" />
-
-            <ImageView
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGoProfile"
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_gravity="center"
-                android:layout_marginStart="@dimen/_35sdp"
-                android:src="@drawable/user" />
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_32sdp"
+                android:text="Add Blood Request / Doner Profile"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:strokeColor="@color/white" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -51,7 +51,7 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="@dimen/_85sdp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/navContainer"
         app:layout_constraintTop_toTopOf="@id/cardview"
@@ -60,26 +60,17 @@
     <LinearLayout
         android:id="@+id/navContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:padding="@dimen/_2sdp"
+        android:layout_height="@dimen/_48sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#646363">
-
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/bottomNavigationView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="@dimen/_60sdp"
                 app:itemIconTint="@color/nav_item_selector"
                 app:itemTextColor="@color/nav_item_selector"
                 app:labelVisibilityMode="selected"
                 app:menu="@menu/home_menu" />
-        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
