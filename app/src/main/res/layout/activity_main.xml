@@ -20,18 +20,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/primary_color"
-            android:padding="@dimen/_5sdp"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/_5sdp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:fontFamily="@font/afont"
                 android:gravity="center"
                 android:text="Blood Bond KPI"
-                android:fontFamily="@font/afont"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_30ssp"
                 android:textStyle="bold" />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGoProfile"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -64,13 +66,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavigationView"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_60sdp"
-                app:itemIconTint="@color/nav_item_selector"
-                app:itemTextColor="@color/nav_item_selector"
-                app:labelVisibilityMode="selected"
-                app:menu="@menu/home_menu" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_60sdp"
+            app:itemIconTint="@color/nav_item_selector"
+            app:itemTextColor="@color/nav_item_selector"
+            app:labelVisibilityMode="selected"
+            app:menu="@menu/home_menu" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

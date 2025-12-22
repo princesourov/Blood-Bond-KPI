@@ -7,50 +7,59 @@
     android:layout_height="match_parent"
     tools:context=".views.dashboard.userDashboard.UserDashboard">
 
-    <androidx.cardview.widget.CardView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cardview"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_color"
+        android:padding="@dimen/_5sdp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="@dimen/_50sdp"
-                android:layout_height="match_parent"
-                android:src="@drawable/app_logo" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/afont"
-                android:gravity="center"
                 android:text="Blood Bond KPI"
-                android:textColor="@color/primary_color"
-                android:textSize="@dimen/_30ssp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_25ssp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/btnLogout"
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:layout_gravity="center"
-                android:layout_marginStart="@dimen/_35sdp"
-                android:src="@drawable/logout" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:text="User Dashboard"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/btnLogout"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     <fragment
         android:id="@+id/fragmentContainerView2"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="@dimen/_62sdp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/navContainer"
         app:layout_constraintTop_toTopOf="@id/cardview"
@@ -59,26 +68,18 @@
     <LinearLayout
         android:id="@+id/navContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:padding="@dimen/_2sdp"
+        android:layout_height="@dimen/_48sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <com.google.android.material.card.MaterialCardView
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#646363">
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavigationView"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_60sdp"
-                app:itemIconTint="@color/nav_item_selector"
-                app:itemTextColor="@color/nav_item_selector"
-                app:labelVisibilityMode="selected"
-                app:menu="@menu/user_menu" />
-        </com.google.android.material.card.MaterialCardView>
+            android:layout_height="@dimen/_60sdp"
+            app:itemIconTint="@color/nav_item_selector"
+            app:itemTextColor="@color/nav_item_selector"
+            app:labelVisibilityMode="selected"
+            app:menu="@menu/user_menu" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
