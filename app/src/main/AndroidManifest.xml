@@ -13,9 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodBondKPI">
         <activity
-            android:name=".views.dashboard.userDashboard.UserDashboard"
-            android:theme="@style/Theme.BloodBondKPI.App.Ber"
+            android:name=".views.dashboard.appDashboard.tools.BMICalculatorActivity"
             android:exported="false" />
+        <activity
+            android:name=".views.dashboard.userDashboard.UserDashboard"
+            android:exported="false"
+            android:theme="@style/Theme.BloodBondKPI.App.Ber" />
         <activity
             android:name=".views.auth.AuthActivity"
             android:exported="false" />

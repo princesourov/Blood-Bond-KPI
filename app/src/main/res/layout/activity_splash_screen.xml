@@ -17,8 +17,9 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="180dp"
         app:srcCompat="@drawable/app_logo" />
+
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/splash_logo"
@@ -39,22 +40,63 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="50dp"
         android:orientation="vertical">
+
         <TextView
+            android:id="@+id/from"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="From"
             android:textSize="20sp"
             android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/companyName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Innovations"
             android:drawableLeft="@drawable/ms_logo"
             android:drawablePadding="5dp"
+            android:text="Innovations"
             android:textColor="#FF0000"
             android:textSize="20sp"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieNoInternet"
+        android:layout_width="@dimen/_200sdp"
+        android:layout_height="@dimen/_200sdp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/no_internet" />
+
+    <TextView
+        android:id="@+id/textNoInternet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lottieNoInternet"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:text="No Internet Connection"
+        android:textColor="@color/primary_color"
+        android:textSize="@dimen/_18ssp"
+        android:visibility="gone" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/retryButton"
+        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textNoInternet"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/primary_color"
+        android:text="Retry"
+        android:visibility="gone" />
+
 </RelativeLayout>
