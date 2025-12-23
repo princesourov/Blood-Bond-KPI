@@ -106,7 +106,7 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:text="New User?"
             android:textAllCaps="false"
-            android:textColor="@color/primary_color"
+            android:textColor="@color/white"
             android:textStyle="bold"
             app:strokeColor="@color/primary_color" />
 

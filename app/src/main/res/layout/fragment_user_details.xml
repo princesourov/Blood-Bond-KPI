@@ -16,9 +16,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
             android:layout_marginBottom="16dp"
             android:fontFamily="@font/baloo"
-            android:layout_marginTop="@dimen/_20sdp"
             android:text="Doner details"
             android:textColor="@color/primary_color"
             android:textSize="@dimen/_25ssp"
@@ -95,12 +95,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_weight="1"
-                android:hint="Season">
+                android:hint="Season"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etSeason"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_55sdp" />
+                    android:layout_height="@dimen/_55sdp"
+                    android:imeOptions="actionNext" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
@@ -133,12 +135,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_weight="1"
-                android:hint="Roll Number">
+                android:hint="Roll Number"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etRoll"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_58sdp"
+                    android:imeOptions="actionNext"
                     android:inputType="number"
                     android:paddingStart="@dimen/_10sdp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -151,12 +155,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Phone Number">
+            android:hint="Phone Number"
+            app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_55sdp"
+                android:imeOptions="actionNext"
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 

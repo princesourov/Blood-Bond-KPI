@@ -92,6 +92,7 @@
         style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_below="@id/textNoInternet"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"

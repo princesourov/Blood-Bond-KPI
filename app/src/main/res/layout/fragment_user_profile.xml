@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:text="Name: "
-                android:textColor="@color/black"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/_20ssp"
                 android:textStyle="bold" />
 
@@ -56,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Email: "
-                android:textColor="@color/black"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Mobile: "
-                android:textColor="@color/black"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
@@ -74,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Department: "
-                android:textColor="@color/black"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
@@ -83,7 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Season: "
-                android:textColor="@color/black"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
@@ -92,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Roll: "
-                android:textColor="@color/black"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Date Of Birth: "
-                android:textColor="@color/black"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
@@ -110,7 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Gender: Male"
-                android:textColor="@color/black"
+                android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
@@ -181,8 +181,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_10sdp"
-                        android:backgroundTint="@color/primary_color"
+                        android:backgroundTint="@color/white"
                         android:text="Update"
+                        android:textColor="?android:textColorPrimary"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>

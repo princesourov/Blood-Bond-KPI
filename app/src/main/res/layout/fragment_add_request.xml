@@ -40,12 +40,11 @@
                     android:id="@+id/spinnerBloodGroup"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
-                    android:inputType="none"
-                    android:focusable="false"
                     android:clickable="true"
+                    android:focusable="false"
+                    android:inputType="none"
                     android:paddingStart="@dimen/_10sdp" />
             </com.google.android.material.textfield.TextInputLayout>
-
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -54,12 +53,14 @@
                 android:layout_height="@dimen/_55sdp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_weight="1"
-                android:hint="Units Needed">
+                android:hint="Units Needed"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etUnits"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:imeOptions="actionNext"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -72,12 +73,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Patient Name">
+            android:hint="Patient Name"
+            app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPatientName"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp" />
+                android:layout_height="@dimen/_50sdp"
+                android:imeOptions="actionNext" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Hospital Name -->
@@ -86,12 +89,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Hospital Name and Location">
+            android:hint="Hospital Name and Location"
+            app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etHospitalName"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp" />
+                android:layout_height="@dimen/_50sdp"
+                android:imeOptions="actionNext" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -105,7 +110,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Required Date">
+                android:hint="Date">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etDate"
@@ -121,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_weight="1"
-                android:hint="Required Time">
+                android:hint="Time">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etTime"
@@ -143,12 +148,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Reason">
+                android:hint="Reason"
+                app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etReason"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp" />
+                    android:layout_height="@dimen/_50sdp"
+                    android:imeOptions="actionNext" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -164,9 +171,9 @@
                     android:id="@+id/spinnerEmergency"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
-                    android:inputType="none"
-                    android:focusable="false"
                     android:clickable="true"
+                    android:focusable="false"
+                    android:inputType="none"
                     android:paddingStart="@dimen/_10sdp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -178,12 +185,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Contact Number">
+            android:hint="Contact Number"
+            app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_50sdp"
+                android:imeOptions="actionNext"
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 
