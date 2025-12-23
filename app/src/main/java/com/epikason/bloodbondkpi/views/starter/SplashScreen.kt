@@ -44,7 +44,6 @@ class SplashScreen : AppCompatActivity() {
                 splashLogo.visibility = ImageView.GONE
                 from.visibility = TextView.GONE
                 companyName.visibility = TextView.GONE
-                appName.visibility = TextView.GONE
                 lottieNoInternet.visibility = LottieAnimationView.VISIBLE
                 textNoInternet.visibility = TextView.VISIBLE
                 retryButton.visibility = Button.VISIBLE
