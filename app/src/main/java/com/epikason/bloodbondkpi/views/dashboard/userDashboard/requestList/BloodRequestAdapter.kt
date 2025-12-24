@@ -10,12 +10,14 @@ import com.epikason.bloodbondkpi.data.model.BloodRequest
 import com.epikason.bloodbondkpi.databinding.ItemBloodRequestBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
-@Suppress("DEPRECATION")
 class BloodRequestAdapter(
-    private val requestBloodList: MutableList<BloodRequest>
+    private val requestBloodList: MutableList<BloodRequest>,
+    private val onListEmpty: () -> Unit
 ) : RecyclerView.Adapter<BloodRequestAdapter.RequestViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RequestViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
+            : RequestViewHolder {
+
         val binding = ItemBloodRequestBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
@@ -25,26 +27,29 @@ class BloodRequestAdapter(
     }
 
     override fun onBindViewHolder(holder: RequestViewHolder, position: Int) {
-        val bloodRequest = requestBloodList[position]
+        val item = requestBloodList[position]
 
         holder.binding.apply {
-            tvPatientName.text = "Patient Name: ${bloodRequest.pName}"
-            tvBloodGroup.text = bloodRequest.bloodGroup
-            tvUnits.text = "Units: ${bloodRequest.units} Bag"
-            tvDate.text = "Donation Date: ${bloodRequest.date}"
-            tvLevel.text = bloodRequest.eLevel
-            tvTime.text = "Donation Time: ${bloodRequest.time}"
-            tvReason.text = bloodRequest.reason
-            tvLocation.text = "Location: ${bloodRequest.hName}"
-            tvMobile.text = "Mobile: ${bloodRequest.number}"
+            tvPatientName.text = "Patient Name: ${item.pName}"
+            tvBloodGroup.text = item.bloodGroup
+            tvUnits.text = "Units: ${item.units} Bag"
+            tvDate.text = "Donation Date: ${item.date}"
+            tvLevel.text = item.eLevel
+            tvTime.text = "Donation Time: ${item.time}"
+            tvReason.text = item.reason
+            tvLocation.text = "Location: ${item.hName}"
+            tvMobile.text = "Mobile: ${item.number}"
 
-            // Delete button with confirmation
             btnDelete.setOnClickListener {
                 AlertDialog.Builder(holder.itemView.context)
                     .setTitle("Delete Request")
-                    .setMessage("Are you sure you want to delete this blood request?")
+                    .setMessage("Are you sure?")
                     .setPositiveButton("Yes") { _, _ ->
-                        deleteRequest(holder.adapterPosition, bloodRequest.documentId, holder)
+                        deleteRequest(
+                            holder.adapterPosition,
+                            item.documentId,
+                            holder
+                        )
                     }
                     .setNegativeButton("No", null)
                     .show()
@@ -53,25 +58,27 @@ class BloodRequestAdapter(
     }
 
     override fun getItemCount(): Int = requestBloodList.size
-    private fun deleteRequest(position: Int, documentId: String, holder: RequestViewHolder) {
+
+    private fun deleteRequest(
+        position: Int,
+        documentId: String,
+        holder: RequestViewHolder
+    ) {
         FirebaseFirestore.getInstance()
             .collection(Nodes.BLOOD_REQUEST)
             .document(documentId)
             .delete()
             .addOnSuccessListener {
-                // Remove item from list and notify RecyclerView
                 requestBloodList.removeAt(position)
                 notifyItemRemoved(position)
+
+                if (requestBloodList.isEmpty()) {
+                    onListEmpty()
+                }
+
                 Toast.makeText(
                     holder.itemView.context,
-                    "Blood request deleted",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
-            .addOnFailureListener { e ->
-                Toast.makeText(
-                    holder.itemView.context,
-                    "Delete failed: ${e.message}",
+                    "Request deleted",
                     Toast.LENGTH_SHORT
                 ).show()
             }
@@ -80,3 +87,4 @@ class BloodRequestAdapter(
     class RequestViewHolder(val binding: ItemBloodRequestBinding) :
         RecyclerView.ViewHolder(binding.root)
 }
+

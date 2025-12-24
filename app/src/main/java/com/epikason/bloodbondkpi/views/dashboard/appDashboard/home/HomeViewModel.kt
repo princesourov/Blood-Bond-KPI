@@ -13,6 +13,7 @@ import jakarta.inject.Inject
 class HomeViewModel @Inject constructor(
     private val userService: UserRepository
 ) : ViewModel() {
+
     private val _getRequestResponse = MutableLiveData<DataState<List<BloodRequest>>>()
     val getRequestResponse: LiveData<DataState<List<BloodRequest>>> = _getRequestResponse
 
@@ -20,25 +21,24 @@ class HomeViewModel @Inject constructor(
         getAllRequest()
     }
 
-
-    fun getAllRequest(){
+    fun getAllRequest() {
         _getRequestResponse.postValue(DataState.Loading())
 
-        userService.getAllRequest().addOnSuccessListener { document->
+        userService.getAllRequest()
+            .addOnSuccessListener { document ->
 
-            val productList = mutableListOf<BloodRequest>()
+                val list = mutableListOf<BloodRequest>()
 
-            document.documents.forEach { doc->
-
-                doc.toObject(BloodRequest::class.java)?.let {
-                    productList.add(it)
+                document.documents.forEach { doc ->
+                    doc.toObject(BloodRequest::class.java)?.let {
+                        list.add(it)
+                    }
                 }
+                _getRequestResponse.postValue(DataState.Success(list))
+            }.addOnFailureListener {
+                _getRequestResponse.postValue(
+                    DataState.Error(it.message ?: "Error")
+                )
             }
-            _getRequestResponse.postValue(DataState.Success(productList))
-        }.addOnFailureListener {
-            _getRequestResponse.postValue(DataState.Error("${it.message}"))
-        }
-
     }
-
 }

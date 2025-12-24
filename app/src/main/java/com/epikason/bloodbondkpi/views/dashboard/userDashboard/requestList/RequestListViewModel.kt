@@ -13,27 +13,31 @@ import jakarta.inject.Inject
 class RequestListViewModel @Inject constructor(
     private val userService: UserRepository
 ) : ViewModel() {
+
     private val _getRequestResponse = MutableLiveData<DataState<List<BloodRequest>>>()
     val getRequestResponse: LiveData<DataState<List<BloodRequest>>> = _getRequestResponse
 
     fun getRequestByID(userID: String) {
         _getRequestResponse.postValue(DataState.Loading())
 
-        userService.getBloodRequestByUserID(userID).addOnSuccessListener { document ->
+        userService.getBloodRequestByUserID(userID)
+            .addOnSuccessListener { document ->
 
-            val bloodRequestList = mutableListOf<BloodRequest>()
+                val list = mutableListOf<BloodRequest>()
 
-            document.documents.forEach { doc ->
-
-                doc.toObject(BloodRequest::class.java)?.let {
-                    it.documentId = doc.id
-                    bloodRequestList.add(it)
+                document.documents.forEach { doc ->
+                    doc.toObject(BloodRequest::class.java)?.let {
+                        it.documentId = doc.id
+                        list.add(it)
+                    }
                 }
-            }
-            _getRequestResponse.postValue(DataState.Success(bloodRequestList))
 
-        }.addOnFailureListener { error ->
-            _getRequestResponse.postValue(DataState.Error("${error.message}"))
-        }
+                _getRequestResponse.postValue(DataState.Success(list))
+            }
+            .addOnFailureListener { e ->
+                _getRequestResponse.postValue(
+                    DataState.Error(e.message ?: "Error")
+                )
+            }
     }
 }
