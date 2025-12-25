@@ -58,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:text="Blood group: "
                 android:textColor="@color/white"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvBloodGroup"
@@ -77,7 +78,8 @@
                 android:layout_alignParentEnd="true"
                 android:text="Units: 3 Bag"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -91,7 +93,8 @@
                 android:layout_height="wrap_content"
                 android:text="Donation Date: 05/12/2025"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvLevel"
@@ -115,7 +118,8 @@
                 android:layout_height="wrap_content"
                 android:text="Donation Time: 10:30 AM"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_13ssp" />
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvReason"
@@ -146,7 +150,8 @@
             android:layout_marginTop="@dimen/_4sdp"
             android:text="Mobile: 01300156566"
             android:textColor="@color/white"
-            android:textSize="@dimen/_13ssp" />
+            android:textSize="@dimen/_13ssp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

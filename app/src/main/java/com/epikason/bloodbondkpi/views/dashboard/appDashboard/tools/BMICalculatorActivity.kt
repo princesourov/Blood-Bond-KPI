@@ -1,5 +1,6 @@
 package com.epikason.bloodbondkpi.views.dashboard.appDashboard.tools
 
+import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.graphics.Color
 import android.os.Bundle
@@ -17,53 +18,68 @@ class BMICalculatorActivity : AppCompatActivity() {
         binding = ActivityBmicalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val feet = 0.3048
+        val feetToMeter = 0.3048f
 
         binding.calcButton.setOnClickListener {
-            val weight = binding.weightInput.text.toString().toFloatOrNull()
-            val heightfeet = binding.heightInput.text.toString().toFloatOrNull()
+            val weightKg = binding.weightInput.text.toString().toFloatOrNull()
+            val heightFeet = binding.heightInput.text.toString().toFloatOrNull() // feet input
 
-            if (weight == null || heightfeet == null) {
-                Toast.makeText(this, "Enter valid numbers", Toast.LENGTH_SHORT).show()
+            // Input validation
+            if (weightKg == null || weightKg <= 0f || heightFeet == null || heightFeet <= 0f) {
+                Toast.makeText(this, "Enter valid positive numbers", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val heightM = (heightfeet * 12 ) * 0.0254f
-            val bmi = weight / (heightM * heightM)
+            // Convert height to meters
+            val heightM = heightFeet * feetToMeter
+
+            // Calculate BMI
+            val bmi = weightKg / (heightM * heightM)
             val bmiRounded = String.format("%.2f", bmi)
 
-            // Determine category, advice, risk, color, and emoji
+            // Determine BMI category, advice, risk, color, emoji
             val (category, advice, risk, color, emoji) = when {
-                bmi < 18.5 -> Quint("Underweight", "Eat more nutritious food 🍎", "Low Risk", Color.parseColor("#03A9F4"), "⚠️")
-                bmi in 18.5..24.9 -> Quint("Normal", "Maintain your healthy lifestyle 🏃‍♂️", "Low Risk", Color.parseColor("#4CAF50"), "✅")
-                bmi in 25.0..29.9 -> Quint("Overweight", "Exercise regularly and control diet 🏋️‍♂️", "Moderate Risk", Color.parseColor("#FFC107"), "⚠️")
-                else -> Quint("Obese", "Consult doctor and improve lifestyle 🩺", "High Risk", Color.parseColor("#F44336"), "❌")
+                bmi < 18.5 -> Quint("Underweight", "Eat more nutritious food 🍎", "Low Risk", 0xFF03A9F4.toInt(), "⚠️")
+                bmi in 18.5..24.9 -> Quint("Normal", "Maintain your healthy lifestyle 🏃‍♂️", "Low Risk", 0xFF4CAF50.toInt(), "✅")
+                bmi in 25.0..29.9 -> Quint("Overweight", "Exercise regularly and control diet 🏋️‍♂️", "Moderate Risk", 0xFFFFC107.toInt(), "⚠️")
+                else -> Quint("Obese", "Consult doctor and improve lifestyle 🩺", "High Risk", 0xFFF44336.toInt(), "❌")
             }
 
-            // Update UI
-            binding.bmiValue.text = "BMI: $bmiRounded"
-            binding.bmiCategory.text = "$emoji $category"
-            binding.bmiAdvice.text = advice
-            binding.bmiRisk.text = "Risk Level: $risk"
-
-            // Animate card background color
-            val colorAnim = ValueAnimator.ofArgb(Color.WHITE, color)
+            // Animate result card color
+            val colorAnim = ValueAnimator.ofObject(ArgbEvaluator(), Color.WHITE, color)
             colorAnim.duration = 500
             colorAnim.addUpdateListener { animator ->
                 binding.resultCard.setCardBackgroundColor(animator.animatedValue as Int)
             }
             colorAnim.start()
 
-            // Show card
+            // Show result card
             binding.resultCard.visibility = View.VISIBLE
 
-            // Update circular progress (0-40 BMI scale)
+            // Animate BMI text counter
+            animateBMICounter(bmiRounded.toFloat())
+
+            // Update category, advice, risk
+            binding.bmiCategory.text = "$emoji $category"
+            binding.bmiAdvice.text = advice
+            binding.bmiRisk.text = "Risk Level: $risk"
+
+            // Update progress bar (max BMI considered 40)
             val progress = ((bmi.coerceAtMost(40f) / 40f) * 100).roundToInt()
             binding.bmiProgress.setProgress(progress, true)
         }
     }
 
-    // Data class with emoji
+    private fun animateBMICounter(finalBMI: Float) {
+        val animator = ValueAnimator.ofFloat(0f, finalBMI)
+        animator.duration = 800
+        animator.addUpdateListener { animation ->
+            val value = animation.animatedValue as Float
+            binding.bmiValue.text = "BMI: ${String.format("%.2f", value)}"
+        }
+        animator.start()
+    }
+
     data class Quint(
         val category: String,
         val advice: String,

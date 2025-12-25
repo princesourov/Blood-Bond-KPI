@@ -113,6 +113,7 @@
             android:textColor="@color/primary_color"
             android:textSize="@dimen/_18ssp"
             android:textStyle="bold"
+            android:fontFamily="@font/baloo"
             android:layout_marginTop="@dimen/_12sdp"
             android:layout_gravity="center" />
 

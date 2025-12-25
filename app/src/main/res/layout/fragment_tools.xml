@@ -42,7 +42,8 @@
                     android:layout_marginTop="@dimen/_8sdp"
                     android:text="এক ক্লিকেই জানুন আপনার BMI"
                     android:textColor="#2F5D9F"
-                    android:textSize="@dimen/_10ssp" />
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCheckBMI"
@@ -91,7 +92,8 @@
                     android:text="  রক্তদান একটি মহৎ মানবিক কাজ\n
                     এবং সামাজিক দায়িত্ব।"
                     android:textColor="@color/primary_color"
-                    android:textSize="@dimen/_10ssp" />
+                    android:textSize="@dimen/_10ssp"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnAboutBlood"
@@ -141,7 +143,8 @@
                     android:text="  জরুরি রক্তদাতাদের খুঁজে\n
        জীবন বাঁচান সহজেই।"
                     android:textColor="#3F9522"
-                    android:textSize="@dimen/_11ssp" />
+                    android:textSize="@dimen/_11ssp"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnAbout"
