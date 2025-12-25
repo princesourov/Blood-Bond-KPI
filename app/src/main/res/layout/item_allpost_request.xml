@@ -9,6 +9,7 @@
     app:strokeWidth="2dp">
 
     <LinearLayout
+        android:id="@+id/bloodRequestCard"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_200sdp"
         android:background="@drawable/cardview_bg"
@@ -40,7 +41,7 @@
             android:id="@+id/tvPatientName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="8dp"
             android:text="Patient Name: Iqbal Hossain Sourov"
             android:textColor="@color/white"
             android:textSize="18sp"
@@ -140,6 +141,7 @@
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textStyle="bold" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -153,15 +155,159 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/tvMobile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="01300156566"
                 android:layout_toEndOf="@id/tvmob"
+                android:text="01300156566"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvGoUserInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="User Info"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/userInfoCard"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_200sdp"
+        android:background="@drawable/card_bc"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/cardName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/baloo"
+                android:text="User Details"
+                android:textColor="@color/primary_color"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvUserBloodGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="O+"
+                android:textColor="@color/primary_color"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:text="Name : Iqbal Hossain Sourov"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:id="@+id/tvUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Email : princesourov41@gmail.com"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/tvUserMobile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mobile: 01300156566"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvUserSeason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Season: 21-22"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvUserDepartment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Department : CST"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tvUserRoll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="Roll: 611867"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp">
+
+            <TextView
+                android:id="@+id/tvUserGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender : Male"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvGoPost"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:text="POST"
+                android:textColor="@color/primary_color"
+                android:textSize="@dimen/_15ssp"
+                android:textStyle="bold" />
+
         </RelativeLayout>
 
 

@@ -10,6 +10,7 @@ import com.epikason.bloodbondkpi.data.model.BloodRequest
 import com.epikason.bloodbondkpi.databinding.ItemBloodRequestBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
+@Suppress("DEPRECATION")
 class BloodRequestAdapter(
     private val requestBloodList: MutableList<BloodRequest>,
     private val onListEmpty: () -> Unit

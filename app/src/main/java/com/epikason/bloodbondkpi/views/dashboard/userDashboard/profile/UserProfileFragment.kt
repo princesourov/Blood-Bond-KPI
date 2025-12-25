@@ -8,7 +8,6 @@ import androidx.fragment.app.viewModels
 import com.epikason.bloodbondkpi.base.BaseFragment
 import com.epikason.bloodbondkpi.core.DataState
 import com.epikason.bloodbondkpi.databinding.FragmentUserProfileBinding
-import com.epikason.bloodbondkpi.views.auth.AuthActivity
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
@@ -44,15 +43,16 @@ class UserProfileFragment :
 
     override fun allObserver() {
         val userID = qAuth.currentUser?.uid ?: return
-
         viewModel.getUserInfoByID(userID)
 
         viewModel.userResponse.observe(viewLifecycleOwner) { state ->
             when (state) {
-                is DataState.Loading -> loadingDialog?.show()
                 is DataState.Error -> {
                     loadingDialog?.dismiss()
                     Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
+                }
+                is DataState.Loading ->{
+                    loadingDialog?.show()
                 }
 
                 is DataState.Success -> {

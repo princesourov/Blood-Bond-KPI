@@ -1,6 +1,5 @@
 package com.epikason.bloodbondkpi.views.dashboard.userDashboard.addRequest
 
-
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.widget.ArrayAdapter
@@ -15,6 +14,7 @@ import com.epikason.bloodbondkpi.core.extract
 import com.epikason.bloodbondkpi.core.isEmpty
 import com.epikason.bloodbondkpi.data.model.BloodRequest
 import com.epikason.bloodbondkpi.databinding.FragmentAddRequestBinding
+import com.epikason.bloodbondkpi.views.dashboard.userDashboard.profile.UserProfileViewModel
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Calendar
@@ -22,10 +22,22 @@ import java.util.Calendar
 @AndroidEntryPoint
 class AddRequestFragment :
     BaseFragment<FragmentAddRequestBinding>(FragmentAddRequestBinding::inflate) {
-    private val viewModel: AddRequestViewModel by viewModels()
 
-    val currentUser = FirebaseAuth.getInstance().currentUser
-    val uid = currentUser?.uid ?: ""
+    private val viewModel: AddRequestViewModel by viewModels()
+    private val profileViewModel: UserProfileViewModel by viewModels()
+
+    private var userName = ""
+    private var userEmail = ""
+    private var userMobile = ""
+    private var userDepartment = ""
+    private var userSeason = ""
+    private var userRoll = ""
+    private var gender = ""
+    private var bloodGroup = ""
+
+    private val uid: String by lazy {
+        FirebaseAuth.getInstance().currentUser?.uid ?: ""
+    }
 
     override fun setListener() {
         setupDropdowns()
@@ -35,45 +47,36 @@ class AddRequestFragment :
     }
 
     override fun allObserver() {
-        registrationResponse()
+
+        if (uid.isNotEmpty()) {
+            profileViewModel.getUserInfoByID(uid)
+        }
+
+        observeAddRequest()
+        observeUserProfile()
     }
 
+
     private fun setupDropdowns() {
+        val bloodGroups = listOf("A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-")
+        val emergencyLevels = listOf("Normal", "Urgent", "Emergency")
 
-        val bloodGroups = listOf(
-            "A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"
+        binding.spinnerBloodGroup.setAdapter(
+            ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, bloodGroups)
         )
 
-        val emergencyLevels = listOf(
-            "Normal", "Urgent", "Emergency"
+        binding.spinnerEmergency.setAdapter(
+            ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, emergencyLevels)
         )
-
-        val bloodAdapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_list_item_1,
-            bloodGroups
-        )
-
-        val emergencyAdapter = ArrayAdapter(
-            requireContext(),
-            android.R.layout.simple_list_item_1,
-            emergencyLevels
-        )
-
-        binding.spinnerBloodGroup.setAdapter(bloodAdapter)
-        binding.spinnerEmergency.setAdapter(emergencyAdapter)
     }
 
     private fun setupDatePicker() {
         binding.etDate.setOnClickListener {
             val cal = Calendar.getInstance()
-
             DatePickerDialog(
                 requireContext(),
                 { _, year, month, day ->
-                    binding.etDate.setText(
-                        "$day/${month + 1}/$year"
-                    )
+                    binding.etDate.setText("$day/${month + 1}/$year")
                 },
                 cal.get(Calendar.YEAR),
                 cal.get(Calendar.MONTH),
@@ -82,18 +85,14 @@ class AddRequestFragment :
         }
     }
 
-
     private fun setupTimePicker() {
         binding.etTime.setOnClickListener {
             val cal = Calendar.getInstance()
-
             TimePickerDialog(
                 requireContext(),
                 { _, hour, minute ->
-                    // Convert hour to 12-hour format + AM/PM
                     val amPm = if (hour >= 12) "PM" else "AM"
                     val hour12 = if (hour % 12 == 0) 12 else hour % 12
-
                     binding.etTime.setText(
                         String.format("%02d:%02d %s", hour12, minute, amPm)
                     )
@@ -107,51 +106,69 @@ class AddRequestFragment :
 
 
     private fun setupSubmit() {
-        with(binding) {
-            binding.btnSubmitRequest.setOnClickListener {
-                spinnerBloodGroup.isEmpty()
-                etUnits.isEmpty()
-                etPatientName.isEmpty()
-                etHospitalName.isEmpty()
-                etDate.isEmpty()
-                etTime.isEmpty()
-                etReason.isEmpty()
-                spinnerEmergency.isEmpty()
-                etPhone.isEmpty()
+        binding.btnSubmitRequest.setOnClickListener {
 
-                if (!spinnerBloodGroup.isEmpty() && !etUnits.isEmpty() && !etPatientName.isEmpty()
-                    && !etHospitalName.isEmpty() && !etDate.isEmpty() && !etTime.isEmpty()
-                    && !etReason.isEmpty() && !spinnerEmergency.isEmpty() && !etPhone.isEmpty()
-                ) {
+            binding.spinnerBloodGroup.isEmpty()
+            binding.etUnits.isEmpty()
+            binding.etPatientName.isEmpty()
+            binding.etHospitalName.isEmpty()
+            binding.etDate.isEmpty()
+            binding.etTime.isEmpty()
+            binding.etReason.isEmpty()
+            binding.spinnerEmergency.isEmpty()
+            binding.etPhone.isEmpty()
 
-                    val user = BloodRequest(
-                        spinnerBloodGroup.extract(),
-                        etUnits.extract(),
-                        etPatientName.extract(),
-                        etHospitalName.extract(),
-                        etDate.extract(),
-                        etTime.extract(),
-                        etReason.extract(),
-                        spinnerEmergency.extract(),
-                        etPhone.extract(),
-                        uid
-                    )
-                    viewModel.addRequest(user)
-                }
+            if (userName.isEmpty()) {
+                Toast.makeText(requireContext(), "User data not loaded yet", Toast.LENGTH_SHORT)
+                    .show()
+                return@setOnClickListener
+            }
+
+            if (
+                !binding.spinnerBloodGroup.isEmpty() &&
+                !binding.etUnits.isEmpty() &&
+                !binding.etPatientName.isEmpty() &&
+                !binding.etHospitalName.isEmpty() &&
+                !binding.etDate.isEmpty() &&
+                !binding.etTime.isEmpty() &&
+                !binding.etReason.isEmpty() &&
+                !binding.spinnerEmergency.isEmpty() &&
+                !binding.etPhone.isEmpty()
+            ) {
+
+                val request = BloodRequest(
+                    binding.spinnerBloodGroup.extract(),
+                    binding.etUnits.extract(),
+                    binding.etPatientName.extract(),
+                    binding.etHospitalName.extract(),
+                    binding.etDate.extract(),
+                    binding.etTime.extract(),
+                    binding.etReason.extract(),
+                    binding.spinnerEmergency.extract(),
+                    binding.etPhone.extract(),
+                    userName,
+                    userEmail,
+                    userMobile,
+                    userDepartment,
+                    userSeason,
+                    userRoll,
+                    bloodGroup,
+                    gender,
+                    uid
+                )
+                viewModel.addRequest(request)
             }
         }
     }
 
-    private fun registrationResponse() {
+
+    private fun observeAddRequest() {
         viewModel.addRequestResponse.observe(viewLifecycleOwner) {
             when (it) {
+                is DataState.Loading -> loadingDialog?.show()
                 is DataState.Error -> {
                     loadingDialog?.dismiss()
-                    Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
-                }
-
-                is DataState.Loading -> {
-                    loadingDialog?.show()
+                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                 }
 
                 is DataState.Success -> {
@@ -165,7 +182,34 @@ class AddRequestFragment :
                     )
                 }
             }
+        }
+    }
 
+    private fun observeUserProfile() {
+        profileViewModel.userResponse.observe(viewLifecycleOwner) { state ->
+            when (state) {
+                is DataState.Loading -> loadingDialog?.show()
+
+                is DataState.Error -> {
+                    loadingDialog?.dismiss()
+                    Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
+                }
+
+                is DataState.Success -> {
+                    loadingDialog?.dismiss()
+                    val user = state.data?.firstOrNull()
+                    if (user != null) {
+                        userName = user.name
+                        userEmail = user.email
+                        userMobile = user.phon
+                        userDepartment = user.department
+                        userSeason = user.season
+                        userRoll = user.roll
+                        bloodGroup = user.bloodGroup
+                        gender = user.roll
+                    }
+                }
+            }
         }
     }
 }
