@@ -55,11 +55,64 @@
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:text="চেক করি চলুন"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:backgroundTint="#3E587D"
                     app:cornerRadius="50dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_190sdp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/about_blood_bc"
+                android:orientation="vertical"
+                android:padding="@dimen/_20sdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:lineSpacingExtra="2dp"
+                    android:text="রক্তদান সম্পর্কে জানুন"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/_18ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="2dp"
+                    android:text="রক্তদান একটি মহৎ মানবিক কাজ\n                    এবং সামাজিক দায়িত্ব।"
+                    android:textColor="@color/primary_color"
+                    android:textSize="@dimen/_11ssp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAboutBlood"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="বিস্তারিত জানুন"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/primary_color"
+                    app:cornerRadius="50dp" />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -106,8 +159,8 @@
                     android:layout_marginEnd="@dimen/_20sdp"
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
-                    android:text="চেক করি চলুন"
-                    android:textColor="#FFFFFF"
+                    android:text="বিস্তারিত জানুন"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:backgroundTint="#3F9522"

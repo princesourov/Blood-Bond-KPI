@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.dashboard.appDashboard.tools.AboutBloodDonetionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="রক্তদান সম্পর্কে জানুন"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="রক্তদান একটি মহৎ মানবিক কাজ এবং সামাজিক দায়িত্ব। একজন মানুষের দেওয়া এক ব্যাগ রক্ত অন্য একজন মানুষের জীবন বাঁচাতে পারে। দুর্ঘটনা, অপারেশন, প্রসবকালীন জটিলতা, থ্যালাসেমিয়া, ক্যান্সারসহ বিভিন্ন রোগে প্রতিনিয়ত রক্তের প্রয়োজন হয়। এই প্রয়োজন পূরণে স্বেচ্ছাসেবী রক্তদাতার ভূমিকা অত্যন্ত গুরুত্বপূর্ণ।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="কে রক্ত দিতে পারবে :"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:lineSpacingExtra="4dp"
+            android:text="সাধারণত নিচের শর্তগুলো পূরণ করলে একজন ব্যক্তি নিরাপদভাবে রক্ত দিতে পারে:\n• বয়স ১৮–৬০ বছর\n• ওজন কমপক্ষে ৪৫ কেজি\n• শারীরিকভাবে সুস্থ ও রোগমুক্ত\n• রক্তচাপ ও হিমোগ্লোবিন স্বাভাবিক মাত্রায়\n• শেষ রক্তদানের পর কমপক্ষে\n
+                • পুরুষদের জন্য ৩ মাস\n
+                • নারীদের জন্য ৪ মাস পেরিয়ে গেছে"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="কে রক্ত দিতে পারবে না (সাময়িক বা স্থায়ীভাবে) :"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:lineSpacingExtra="4dp"
+            android:text="নিচের অবস্থায় রক্তদান করা উচিত নয়:\n• জ্বর, সর্দি, কাশি বা কোনো সংক্রমণ থাকলে\n• হেপাটাইটিস B/C, HIV, ক্যান্সার, হৃদরোগে আক্রান্ত হলে\n• গর্ভাবস্থায় বা সদ্য সন্তান প্রসব করলে\n• বড় অপারেশন বা গুরুতর অসুস্থতার পর\n• অ্যালকোহল বা নেশাজাতীয় দ্রব্য গ্রহণের পর\nসন্দেহ হলে অবশ্যই চিকিৎসকের পরামর্শ নিতে হবে।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="রক্তদান কি শরীরের জন্য ক্ষতিকর? :"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:lineSpacingExtra="4dp"
+            android:text="না। সঠিক নিয়ম মেনে রক্তদান করলে এটি শরীরের জন্য ক্ষতিকর নয়। বরং—\n• শরীরে নতুন রক্তকণিকা তৈরিতে সহায়তা করে\n• হৃদরোগের ঝুঁকি কমাতে সাহায্য করে\n• শরীরকে সতেজ রাখে\n• মানসিক তৃপ্তি ও আত্মতৃপ্তি দেয়"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="রক্তদানের আগে করণীয় :"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:lineSpacingExtra="4dp"
+            android:text="রক্তদানের আগে কিছু বিষয় মেনে চলা জরুরি:\n• পর্যাপ্ত ঘুমানো\n• হালকা খাবার খাওয়া (খালি পেটে নয়)\n• বেশি পানি পান করা\n• ধূমপান ও অ্যালকোহল এড়িয়ে চলা"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="রক্তদানের পরে করণীয় :"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:lineSpacingExtra="4dp"
+            android:text="রক্তদানের পর—\n• ১০–১৫ মিনিট বিশ্রাম নিন\n• পানি, জুস বা শরবত পান করুন\n• ভারী কাজ বা ব্যায়াম কিছু সময় এড়িয়ে চলুন\n• মাথা ঘোরা বা অস্বস্তি হলে সঙ্গে সঙ্গে জানান"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="রক্তদান কেন জরুরি :"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:lineSpacingExtra="4dp"
+            android:text="• রক্ত কৃত্রিমভাবে তৈরি করা যায় না\n• রক্তের কোনো বিকল্প নেই\n• একজন মানুষের একটি সিদ্ধান্ত অন্য একজনের জীবন বাঁচাতে পারে\nআজ আপনি রক্ত দিলে, আগামীকাল হয়তো কেউ আপনার জন্য রক্ত দেবে।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/_12ssp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blood Bond KPI-এর লক্ষ্য :"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/_15ssp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:lineSpacingExtra="4dp"
+            android:text="Blood Bond KPI অ্যাপের মাধ্যমে কলেজ শিক্ষার্থীদের মধ্যে রক্তদানের সচেতনতা তৈরি করা এবং জরুরি মুহূর্তে দ্রুত সহায়তা পৌঁছে দেওয়াই আমাদের মূল লক্ষ্য।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="@dimen/_12ssp" />
+    </LinearLayout>
+
+</ScrollView>

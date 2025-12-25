@@ -81,9 +81,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
+            android:layout_marginTop="@dimen/_12ssp"
             android:gravity="center"
-            android:maxLines="1"
             android:text="Copyright © 2025 [MS Innovations]. All Rights Reserved."
             android:textColor="?android:textColorPrimary"
             android:textSize="12sp"
@@ -110,7 +109,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Developed by Android App Developer:\nIqbal Hossain Sourov\n\nContributors:\nRubayat Al Hasan\nUajjal Sen\nAnondo Sarkar"
-
             android:textColor="?android:textColorPrimary"
             android:textSize="14sp" />
 
@@ -119,7 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:text="Contact"
+            android:text="Contact Us"
             android:textColor="@color/primary_color"
             android:textSize="@dimen/_14ssp"
             android:textStyle="bold" />
@@ -173,11 +171,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Powered by"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textAllCaps="true"
+                android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/companyName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodBondKPI">
         <activity
+            android:name=".views.dashboard.appDashboard.tools.AboutBloodDonetionActivity"
+            android:exported="false" />
+        <activity
             android:name=".views.dashboard.appDashboard.tools.AboutApp"
             android:exported="false" />
         <activity
