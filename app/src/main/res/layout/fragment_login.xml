@@ -93,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_32sdp"
             android:layout_marginTop="@dimen/_32sdp"
+            android:textColor="@color/white"
             android:backgroundTint="@color/primary_color"
             android:text="Login"
             android:textStyle="bold" />
@@ -106,7 +107,7 @@
             android:layout_marginTop="@dimen/_8sdp"
             android:text="New User?"
             android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:textColor="@color/primary_color"
             android:textStyle="bold"
             app:strokeColor="@color/primary_color" />
 

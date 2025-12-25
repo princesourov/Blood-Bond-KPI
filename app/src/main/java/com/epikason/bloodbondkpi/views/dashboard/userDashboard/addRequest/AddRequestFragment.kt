@@ -211,7 +211,7 @@ class AddRequestFragment :
                         userSeason = user.season
                         userRoll = user.roll
                         bloodGroup = user.bloodGroup
-                        gender = user.roll
+                        gender = user.gender
                     }
                 }
             }

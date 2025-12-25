@@ -30,6 +30,7 @@ class AllBloodRequestAdapter(private val requestBloodList: List<BloodRequest>)
         holder.binding.apply {
             tvPatientName.text = "Patient Name: ${item.pName}"
             tvBloodGroup.text = item.bloodGroup
+            tvtBloodGroup.text = item.bloodGroup
             tvUnits.text = "Units: ${item.units} Bag"
             tvDate.text = "Donation Date: ${item.date}"
             tvLevel.text = item.eLevel
