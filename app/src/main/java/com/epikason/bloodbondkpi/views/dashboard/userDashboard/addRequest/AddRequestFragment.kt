@@ -34,6 +34,9 @@ class AddRequestFragment :
     private var userRoll = ""
     private var gender = ""
     private var bloodGroup = ""
+    private val autoDate = getCurrentDate()
+    private val autoTime = getCurrentTime()
+
 
     private val uid: String by lazy {
         FirebaseAuth.getInstance().currentUser?.uid ?: ""
@@ -154,6 +157,8 @@ class AddRequestFragment :
                     userRoll,
                     bloodGroup,
                     gender,
+                    autoDate,
+                    autoTime,
                     uid
                 )
                 viewModel.addRequest(request)
@@ -212,4 +217,23 @@ class AddRequestFragment :
             }
         }
     }
+    private fun getCurrentDate(): String {
+        val cal = Calendar.getInstance()
+        val day = cal.get(Calendar.DAY_OF_MONTH)
+        val month = cal.get(Calendar.MONTH) + 1
+        val year = cal.get(Calendar.YEAR)
+        return "$day/$month/$year"
+    }
+
+    private fun getCurrentTime(): String {
+        val cal = Calendar.getInstance()
+        val hour = cal.get(Calendar.HOUR_OF_DAY)
+        val minute = cal.get(Calendar.MINUTE)
+
+        val amPm = if (hour >= 12) "PM" else "AM"
+        val hour12 = if (hour % 12 == 0) 12 else hour % 12
+
+        return String.format("%02d:%02d %s", hour12, minute, amPm)
+    }
+
 }

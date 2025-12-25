@@ -171,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="@dimen/_20sdp"
-                android:text="User Info"
+                android:text="post Info"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_15ssp"
@@ -186,9 +186,9 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_200sdp"
         android:background="@drawable/card_bc"
-        android:visibility="gone"
+
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -199,9 +199,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/baloo"
-                android:text="User Details"
+                android:text="Post Details"
                 android:textColor="@color/primary_color"
-                android:textSize="26sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -211,8 +211,33 @@
                 android:layout_alignParentEnd="true"
                 android:text="O+"
                 android:textColor="@color/primary_color"
-                android:textSize="32sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp">
+
+            <TextView
+                android:id="@+id/tvPostDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post Date : 20/12/2025"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPostTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Post Time: 10:30 AM"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
         </RelativeLayout>
 
         <TextView
@@ -222,7 +247,7 @@
             android:layout_marginTop="@dimen/_7sdp"
             android:text="Name : Iqbal Hossain Sourov"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/_14ssp"
+            android:textSize="@dimen/_12ssp"
             android:textStyle="bold" />
 
         <TextView

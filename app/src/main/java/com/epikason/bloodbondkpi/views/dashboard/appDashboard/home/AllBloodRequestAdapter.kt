@@ -46,6 +46,8 @@ class AllBloodRequestAdapter(private val requestBloodList: List<BloodRequest>)
             tvUserDepartment.text = "Department: ${item.uDepartment}"
             tvUserRoll.text = "Roll: ${item.uRoll}"
             tvUserGender.text = "Gender: ${item.uGender}"
+            tvPostDate.text = "Post Date: ${item.postDate}"
+            tvPostTime.text = "Post Time: ${item.postTime}"
 
             tvGoUserInfo.setOnClickListener {
                 bloodRequestCard.animate()

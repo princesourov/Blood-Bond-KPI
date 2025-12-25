@@ -18,6 +18,8 @@ data class BloodRequest(
     var uRoll: String = "",
     var uBloodGroup: String = "",
     var uGender: String = "",
+    var postDate: String = "",
+    var postTime: String = "",
     var userID: String = "",
     var documentId: String = ""
 )
