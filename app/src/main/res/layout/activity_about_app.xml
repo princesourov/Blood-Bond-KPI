@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.dashboard.appDashboard.tools.AboutApp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <ImageView
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_150sdp"
+            android:layout_gravity="center"
+            android:src="@drawable/app_logowt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/baloo"
+            android:text="Blood Bond kpi"
+            android:textAllCaps="true"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/_25sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Blood Bond KPI হলো শুধুমাত্র কলেজ শিক্ষার্থীদের জন্য তৈরি একটি অ্যাপ, যেখানে প্রত্যেক ছাত্র-ছাত্রী ডোনার হিসেবে রেজিস্টার হতে পারে এবং জরুরি রক্তের প্রয়োজনে সহপাঠীদের সাথে দ্রুত সংযোগ স্থাপন করতে পারে।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="1. Donor Account:\nএকবার অ্যাকাউন্ট খুললেই একজন student স্বয়ংক্রিয়ভাবে ডোনার হিসেবে তালিকাভুক্ত হয়। প্রোফাইলে নাম, রক্তের গ্রুপ, ফোন নম্বর এবং অন্যান্য তথ্য দেখা যাবে , শেষ কবে রক্ত দিয়েছে এবং আবার রক্ত দিতে আগ্রহী কিনা—এসব তথ্য আপডেট করা যায়।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="2. Blood Requests:\nযে কেউ রক্তের প্রয়োজনে request post করতে পারে। সকল request অ্যাপের Home অপশনে কলেজের সবাই দেখতে পাবে। রক্ত পাওয়া হয়ে গেলে request অবশ্যই delete করতে হবে।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="3. Filter Option:\nAll Donor List অপশনে সকল ডোনারের তথ্য দেখা যাবে। রক্তের গ্রুপ অনুযায়ী filter ব্যবহার করে প্রয়োজনীয় ডোনারকে সহজেই খুঁজে নিয়ে সরাসরি কল করা যায়।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="4. BMI Test:\nএই অপশনের মাধ্যমে ব্যবহারকারী নিজের BMI হিসাব করতে পারে, যা স্বাস্থ্য সচেতনতা বৃদ্ধিতে সহায়ক।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Purpose:\nকলেজ শিক্ষার্থীদের মধ্যে রক্তদাতা ও রক্তপ্রার্থীদের সংযোগ স্থাপন করা, জরুরি সময়ে দ্রুত সহায়তা পৌঁছে দেওয়া এবং রক্তদানকে সহজ, নিরাপদ ও সচেতন করা।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="Copyright © 2025 [MS Innovations]. All Rights Reserved."
+            android:textColor="?android:textColorPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="এই অ্যাপের সমস্ত কন্টেন্ট, ডিজাইন, কোড এবং উপাদান কপিরাইট আইনের আওতাভুক্ত। অনুমতি ছাড়া এই অ্যাপের কোনো অংশ পুনরুৎপাদন, বিতরণ বা পরিবর্তন করা আইনত নিষিদ্ধ।"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Unauthorized use, duplication, or distribution of this application or any part thereof is strictly prohibited and may result in legal consequences."
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Developed by MS Innovations\n\nAndroid App Developer:\nMd. Iqbal Hossain Sourav\n\nContributors:\nRubayat Al Hasan\nUajjal Sen\nAnondo Sarkar"
+
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:text="Contact"
+            android:textStyle="bold"
+            android:textColor="@color/primary_color"
+            android:textSize="@dimen/_14ssp" />
+    </LinearLayout>
+</ScrollView>

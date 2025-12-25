@@ -15,11 +15,11 @@ class ToolsFragment : BaseFragment<FragmentToolsBinding>(FragmentToolsBinding::i
             btnCheckBMI.setOnClickListener {
                 startActivity(Intent(requireContext(), BMICalculatorActivity::class.java))
             }
-
+            btnAbout.setOnClickListener {
+                startActivity(Intent(requireContext(), AboutApp::class.java))
+            }
         }
-
     }
-
     override fun allObserver() {
 
     }
