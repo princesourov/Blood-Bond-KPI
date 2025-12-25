@@ -25,7 +25,7 @@
                 android:fontFamily="@font/baloo"
                 android:text="Doner Details"
                 android:textColor="@color/primary_color"
-                android:textSize="26sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -35,7 +35,7 @@
                 android:layout_alignParentEnd="true"
                 android:text="O+"
                 android:textColor="@color/primary_color"
-                android:textSize="32sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -43,10 +43,11 @@
             android:id="@+id/tvDonerName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_7sdp"
             android:text="Doner Name : Iqbal Hossain Sourov"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:textColor="@android:color/black"
-            android:textSize="18sp"
+            android:textSize="@dimen/_13ssp"
             android:textStyle="bold" />
 
         <TextView
@@ -54,16 +55,18 @@
             android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             android:text="Email : princesourov41@gmail.com"
             android:textColor="@android:color/black"
-            android:textSize="14sp"
+            android:textSize="@dimen/_11ssp"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="2dp">
 
             <TextView
                 android:id="@+id/tvmob"
@@ -71,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:text="Mobile: "
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimen/_11ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -81,7 +84,7 @@
                 android:layout_toEndOf="@id/tvmob"
                 android:text="01300156566"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimen/_11ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -91,14 +94,14 @@
                 android:layout_alignParentEnd="true"
                 android:text="Gender : Male"
                 android:textColor="@android:color/black"
-                android:textSize="14sp"
+                android:textSize="@dimen/_11ssp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp">
+            android:layout_marginTop="@dimen/_2sdp">
 
 
             <TextView
@@ -107,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:text="Date of Birth: 01-08-2003"
                 android:textColor="@android:color/black"
-                android:textSize="14sp"
+                android:textSize="@dimen/_11ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -117,7 +120,7 @@
                 android:layout_alignParentEnd="true"
                 android:text="Season: 21-22"
                 android:textColor="@android:color/black"
-                android:textSize="14sp"
+                android:textSize="@dimen/_11ssp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -125,26 +128,26 @@
             android:id="@+id/tvDepartment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             android:text="Department : CST"
             android:textColor="@android:color/black"
-            android:textSize="14sp"
+            android:textSize="@dimen/_11ssp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvRoll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             android:text="Roll: 611867"
             android:textColor="@android:color/black"
-            android:textSize="14sp"
+            android:textSize="@dimen/_11ssp"
             android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp">
+            android:layout_marginTop="@dimen/_2sdp">
 
             <TextView
                 android:id="@+id/tvStatus"
@@ -153,7 +156,7 @@
                 android:lineSpacingExtra="2dp"
                 android:text="Status: Interested"
                 android:textColor="@android:color/black"
-                android:textSize="14sp"
+                android:textSize="@dimen/_11ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -163,9 +166,8 @@
                 android:layout_alignParentEnd="true"
                 android:text="Last Donate : 29-12-2026"
                 android:textColor="@android:color/black"
-                android:textSize="14sp"
+                android:textSize="@dimen/_11ssp"
                 android:textStyle="bold" />
         </RelativeLayout>
-
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

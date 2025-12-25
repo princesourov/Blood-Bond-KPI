@@ -32,7 +32,7 @@
             android:gravity="center"
             android:text="Blood Bond KPI"
             android:textColor="@color/primary_color"
-            android:textSize="@dimen/_30ssp" />
+            android:textSize="@dimen/_28ssp" />
 
         <TextView
             android:layout_width="wrap_content"

@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".views.dashboard.appDashboard.tools.ToolsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
@@ -29,31 +30,27 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:lineSpacingExtra="2dp"
                     android:text="ওজন ঠিক আছে তো?"
                     android:textColor="#1F3C88"
-                    android:textSize="@dimen/_18ssp"
+                    android:textSize="@dimen/_15ssp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginTop="8dp"
-                    android:lineSpacingExtra="2dp"
-                    android:text="এক ক্লিকেই জানুন আপনার BMI  "
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="এক ক্লিকেই জানুন আপনার BMI"
                     android:textColor="#2F5D9F"
-                    android:textSize="@dimen/_11ssp" />
+                    android:textSize="@dimen/_10ssp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCheckBMI"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginTop="@dimen/_30sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
                     android:text="চেক করি চলুন"
                     android:textColor="@color/white"
                     android:textSize="14sp"
@@ -81,41 +78,38 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:lineSpacingExtra="2dp"
                     android:text="রক্তদান সম্পর্কে জানুন"
                     android:textColor="@color/primary_color"
-                    android:textSize="@dimen/_18ssp"
+                    android:textSize="@dimen/_15ssp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginTop="8dp"
-                    android:lineSpacingExtra="2dp"
-                    android:text="রক্তদান একটি মহৎ মানবিক কাজ\n                    এবং সামাজিক দায়িত্ব।"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="  রক্তদান একটি মহৎ মানবিক কাজ\n
+                    এবং সামাজিক দায়িত্ব।"
                     android:textColor="@color/primary_color"
-                    android:textSize="@dimen/_11ssp" />
+                    android:textSize="@dimen/_10ssp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnAboutBlood"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginTop="@dimen/_30sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
                     android:text="বিস্তারিত জানুন"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:backgroundTint="@color/primary_color"
                     app:cornerRadius="50dp" />
-
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
+        <!-- APP ABOUT CARD -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_190sdp"
@@ -134,19 +128,18 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:lineSpacingExtra="2dp"
                     android:text="অ্যাপ সম্পর্কে জানুন"
                     android:textColor="#3F9522"
-                    android:textSize="@dimen/_18ssp"
+                    android:textSize="@dimen/_15ssp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginTop="8dp"
-                    android:lineSpacingExtra="2dp"
-                    android:text="জরুরি রক্তদাতাদের খুঁজে\n      জীবন বাঁচান সহজেই।"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="  জরুরি রক্তদাতাদের খুঁজে\n
+       জীবন বাঁচান সহজেই।"
                     android:textColor="#3F9522"
                     android:textSize="@dimen/_11ssp" />
 
@@ -155,18 +148,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
-                    android:layout_marginTop="@dimen/_30sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:insetTop="0dp"
-                    android:insetBottom="0dp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
                     android:text="বিস্তারিত জানুন"
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:backgroundTint="#3F9522"
                     app:cornerRadius="50dp" />
-
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
+
     </LinearLayout>
 </ScrollView>

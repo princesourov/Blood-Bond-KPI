@@ -26,8 +26,10 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/baloo"
                 android:text="Blood Request for "
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:textColor="@color/white"
-                android:textSize="28sp"
+                android:textSize="@dimen/_20ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -36,9 +38,11 @@
                 android:layout_height="wrap_content"
                 android:layout_toEndOf="@id/title"
                 android:fontFamily="@font/baloo"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:text="O+"
                 android:textColor="@color/white"
-                android:textSize="28sp"
+                android:textSize="@dimen/_20ssp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -53,16 +57,17 @@
             android:id="@+id/tvPatientName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:text="Patient Name: Iqbal Hossain Sourov"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="@dimen/_13ssp"
             android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="@dimen/_2sdp">
 
             <TextView
                 android:id="@+id/tvBloodGroupLabel"
@@ -70,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:text="Blood group: "
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -80,7 +85,7 @@
                 android:layout_toEndOf="@id/tvBloodGroupLabel"
                 android:text="O+"
                 android:textColor="@color/white"
-                android:textSize="17sp"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -90,14 +95,14 @@
                 android:layout_alignParentEnd="true"
                 android:text="Units: 3 Bag"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="@dimen/_2sdp">
 
             <TextView
                 android:id="@+id/tvDate"
@@ -105,7 +110,7 @@
                 android:layout_height="wrap_content"
                 android:text="Donation Date: 05/12/2025"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -115,14 +120,14 @@
                 android:layout_alignParentEnd="true"
                 android:text="Emergency"
                 android:textColor="#F8D545"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="@dimen/_2sdp">
 
             <TextView
                 android:id="@+id/tvTime"
@@ -130,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:text="Donation Time : 10:30 AM"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -140,7 +145,7 @@
                 android:layout_alignParentEnd="true"
                 android:text="Scissore"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -148,16 +153,18 @@
             android:id="@+id/tvLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:text="Location : Kurigram Shodor Hospital"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="@dimen/_12ssp"
             android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="@dimen/_2sdp">
 
             <TextView
                 android:id="@+id/tvmob"
@@ -165,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:text="Mobile: "
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -175,7 +182,7 @@
                 android:layout_toEndOf="@id/tvmob"
                 android:text="01300156566"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
             <TextView
@@ -187,18 +194,19 @@
                 android:text="post Info"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_15ssp"
+                android:textSize="@dimen/_14ssp"
                 android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/userInfoCard"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_200sdp"
         android:background="@drawable/card_bc"
-        android:visibility="gone"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:visibility="gone">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -211,14 +219,13 @@
                 android:fontFamily="@font/baloo"
                 android:text="Post Details"
                 android:textColor="@color/primary_color"
-                android:textSize="24sp"
+                android:textSize="@dimen/_18ssp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_1sdp">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/tvPostDate"
@@ -226,8 +233,7 @@
                 android:layout_height="wrap_content"
                 android:text="Post Date : 20/12/2025"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_12ssp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/_11ssp" />
 
             <TextView
                 android:id="@+id/tvPostTime"
@@ -236,15 +242,14 @@
                 android:layout_alignParentEnd="true"
                 android:text="Post Time: 10:30 AM"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/_12ssp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/_11ssp" />
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp">
+            android:layout_marginTop="@dimen/_2sdp">
 
             <TextView
                 android:id="@+id/tvUserName"
@@ -252,6 +257,8 @@
                 android:layout_height="wrap_content"
                 android:text="Name : Iqbal Hossain Sourov"
                 android:textColor="@android:color/black"
+                android:ellipsize="end"
+                android:singleLine="true"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold" />
 
@@ -262,8 +269,7 @@
                 android:layout_toStartOf="@id/tvUserBloodGroup"
                 android:text="Blood Group: "
                 android:textColor="@color/black"
-                android:textSize="@dimen/_12ssp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/_11ssp" />
 
             <TextView
                 android:id="@+id/tvUserBloodGroup"
@@ -272,7 +278,7 @@
                 android:layout_alignParentEnd="true"
                 android:text="O+"
                 android:textColor="@color/primary_color"
-                android:textSize="@dimen/_12ssp"
+                android:textSize="@dimen/_11ssp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -281,16 +287,15 @@
             android:id="@+id/tvUserEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             android:text="Email : princesourov41@gmail.com"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/_12ssp"
-            android:textStyle="bold" />
+            android:textSize="@dimen/_11ssp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp">
+            android:layout_marginTop="@dimen/_2sdp">
 
             <TextView
                 android:id="@+id/tvUserMobile"
@@ -298,8 +303,7 @@
                 android:layout_height="wrap_content"
                 android:text="Mobile: 01300156566"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_12ssp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/_11ssp" />
 
             <TextView
                 android:id="@+id/tvUserSeason"
@@ -308,20 +312,17 @@
                 android:layout_alignParentEnd="true"
                 android:text="Season: 21-22"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/_12ssp"
-                android:textStyle="bold" />
-
+                android:textSize="@dimen/_11ssp" />
         </RelativeLayout>
 
         <TextView
             android:id="@+id/tvUserDepartment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_2sdp"
             android:text="Department : CST"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/_12ssp"
-            android:textStyle="bold" />
+            android:textSize="@dimen/_11ssp" />
 
 
         <TextView
@@ -331,13 +332,12 @@
             android:layout_marginTop="@dimen/_5sdp"
             android:text="Roll: 611867"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/_12ssp"
-            android:textStyle="bold" />
+            android:textSize="@dimen/_12ssp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp">
+            android:layout_marginTop="@dimen/_2sdp">
 
             <TextView
                 android:id="@+id/tvUserGender"
@@ -345,8 +345,7 @@
                 android:layout_height="wrap_content"
                 android:text="Gender : Male"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/_12ssp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/_12ssp" />
 
             <TextView
                 android:id="@+id/tvGoPost"
@@ -356,7 +355,7 @@
                 android:layout_marginStart="@dimen/_20sdp"
                 android:text="POST"
                 android:textColor="@color/primary_color"
-                android:textSize="@dimen/_15ssp"
+                android:textSize="@dimen/_14ssp"
                 android:textStyle="bold" />
 
         </RelativeLayout>

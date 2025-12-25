@@ -11,69 +11,69 @@
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:cardElevation="@dimen/_2sdp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/primary_color"
-            android:gravity="center"
             android:orientation="vertical"
-            android:padding="@dimen/_5sdp">
+            android:gravity="center"
+            android:background="@color/primary_color"
+            android:padding="@dimen/_10sdp">
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/afont"
-                android:gravity="center"
+                android:layout_height="wrap_content"
                 android:text="Blood Bond KPI"
                 android:textColor="@color/white"
-                android:textSize="@dimen/_30ssp"
-                android:textStyle="bold" />
+                android:textSize="@dimen/_26ssp"
+                android:textStyle="bold"
+                android:fontFamily="@font/afont"
+                android:gravity="center"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnGoProfile"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
                 android:text="Add Blood Request / Doner Profile"
                 android:textAllCaps="false"
+                android:textSize="@dimen/_10ssp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                app:strokeColor="@color/white" />
+                app:strokeColor="@color/white"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-
     <fragment
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_85sdp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@+id/navContainer"
-        app:layout_constraintTop_toTopOf="@id/cardview"
-        app:navGraph="@navigation/home_nav" />
-
+        app:navGraph="@navigation/home_nav"
+        app:layout_constraintTop_toBottomOf="@id/cardview"
+        app:layout_constraintBottom_toTopOf="@id/navContainer"/>
     <LinearLayout
         android:id="@+id/navContainer"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_48sdp"
+        android:layout_height="@dimen/_55sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:itemIconTint="@color/nav_item_selector"
             app:itemTextColor="@color/nav_item_selector"
             app:labelVisibilityMode="selected"
-            app:menu="@menu/home_menu" />
+            app:menu="@menu/home_menu"/>
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

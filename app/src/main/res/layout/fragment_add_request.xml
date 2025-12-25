@@ -11,26 +11,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="@dimen/_12sdp">
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="@dimen/_12sdp"
             android:fontFamily="@font/baloo"
             android:text="Blood Request"
             android:textColor="@color/primary_color"
-            android:textSize="@dimen/_25ssp"
+            android:textSize="@dimen/_22ssp"
             android:textStyle="bold" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8sdp"
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Blood Group"
@@ -39,19 +42,18 @@
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/spinnerBloodGroup"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_height="@dimen/_48sdp"
                     android:clickable="true"
                     android:focusable="false"
                     android:inputType="none"
-                    android:paddingStart="@dimen/_10sdp" />
+                    android:paddingStart="@dimen/_8sdp" />
             </com.google.android.material.textfield.TextInputLayout>
-
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_55sdp"
-                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:layout_weight="1"
                 android:hint="Units Needed"
                 app:endIconMode="clear_text">
@@ -59,54 +61,56 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etUnits"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/_47sdp"
                     android:imeOptions="actionNext"
                     android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
 
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="@dimen/_8sdp"
             android:hint="Patient Name"
             app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPatientName"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
-                android:singleLine="true"
+                android:layout_height="@dimen/_48sdp"
+                android:imeOptions="actionNext"
                 android:inputType="text"
-                android:imeOptions="actionNext"/>
+                android:singleLine="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="@dimen/_8sdp"
             android:hint="Hospital Name and Location"
             app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etHospitalName"
                 android:layout_width="match_parent"
-                android:inputType="text"
-                android:layout_height="@dimen/_50sdp"
-                android:imeOptions="actionNext" />
+                android:layout_height="@dimen/_48sdp"
+                android:imeOptions="actionNext"
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="@dimen/_8sdp"
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Date">
@@ -114,36 +118,35 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etDate"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_height="@dimen/_48sdp"
                     android:focusable="false" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:layout_weight="1"
                 android:hint="Time">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etTime"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_height="@dimen/_48sdp"
                     android:focusable="false" />
             </com.google.android.material.textfield.TextInputLayout>
-
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="@dimen/_8sdp"
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Reason"
@@ -152,16 +155,16 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etReason"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
-                    android:inputType="text"
-                    android:imeOptions="actionNext" />
+                    android:layout_height="@dimen/_47sdp"
+                    android:imeOptions="actionNext"
+                    android:inputType="text" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_8sdp"
                 android:layout_weight="1"
                 android:hint="Emergency Level"
                 app:endIconMode="dropdown_menu">
@@ -169,27 +172,26 @@
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/spinnerEmergency"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_height="@dimen/_48sdp"
                     android:clickable="true"
                     android:focusable="false"
                     android:inputType="none"
-                    android:paddingStart="@dimen/_10sdp" />
+                    android:paddingStart="@dimen/_8sdp" />
             </com.google.android.material.textfield.TextInputLayout>
-
-
         </LinearLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="@dimen/_12sdp"
             android:hint="Contact Number"
             app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPhone"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_50sdp"
+                android:layout_height="@dimen/_48sdp"
                 android:imeOptions="actionDone"
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -199,12 +201,10 @@
             style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_12sdp"
             android:backgroundTint="@color/primary_color"
             android:text="Add Request"
             android:textColor="@color/white"
             android:textStyle="bold" />
 
     </LinearLayout>
-
 </ScrollView>
