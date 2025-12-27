@@ -100,11 +100,33 @@
             android:id="@+id/tvGender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gender: Male"
+            android:text="Gender:"
             android:textColor="?android:textColorPrimary"
             android:textSize="@dimen/_14ssp"
             android:textStyle="bold" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp">
+            <TextView
+                android:id="@+id/tvBloodGroupLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blood group: "
+                android:textColor="?android:textColorPrimary"
+                android:textSize="@dimen/_13ssp"
+                android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/tvBloodGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tvBloodGroupLabel"
+                android:text="O+"
+                android:textColor="@color/primary_color"
+                android:textSize="@dimen/_16ssp"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <TextView
             android:layout_width="wrap_content"

@@ -1,7 +1,6 @@
 package com.epikason.bloodbondkpi.views.dashboard.userDashboard.profile
 
 import android.app.DatePickerDialog
-import android.content.Intent
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -68,6 +67,7 @@ class UserProfileFragment :
                             tvRoll.text = "Roll: ${it.roll ?: "No Roll"}"
                             tvDOB.text = "Date of Birth: ${it.dateOfBirth ?: "No Date Of Birth"}"
                             tvGender.text = "Gender: ${it.gender ?: "No Gender"}"
+                            tvBloodGroup.text = it.bloodGroup
 
                             etLastDonate.setText(it.lastDonate)
 
