@@ -66,12 +66,14 @@ dependencies {
 
     //lottie
     implementation(libs.lottie)
+    //refresh
+    implementation(libs.swiperefreshlayout)
 
     //dagger hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
-    implementation("com.google.android.material:material:1.11.0")
+
 
 
 }

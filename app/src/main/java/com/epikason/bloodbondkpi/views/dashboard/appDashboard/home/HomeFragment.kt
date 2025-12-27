@@ -15,6 +15,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     override fun setListener() {
 
+        binding.swipeRefresh.setOnRefreshListener {
+            viewModel.getAllRequest()
+        }
+
     }
     override fun allObserver() {
         viewModel.getRequestResponse.observe(viewLifecycleOwner) { state ->
@@ -26,12 +30,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
                 is DataState.Error -> {
                     loadingDialog?.dismiss()
+                    binding.swipeRefresh.isRefreshing = false
                     showEmptyState(true)
                 }
 
                 is DataState.Success -> {
                     loadingDialog?.dismiss()
-
+                    binding.swipeRefresh.isRefreshing = false
                     val list = state.data ?: emptyList()
 
                     if (list.isEmpty()) {

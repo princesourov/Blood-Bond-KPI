@@ -5,10 +5,12 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:textColorPrimary">#000000</item>
+        <item name="colorSecondary">#FFFFFF</item>
     </style>
 
     <style name="Theme.BloodBondKPI" parent="Base.Theme.BloodBondKPI" />
     <style name="Theme.BloodBondKPI.App.Ber" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/primary_color</item>
+        <item name="colorSecondary">#FFFFFF</item>
     </style>
 </resources>

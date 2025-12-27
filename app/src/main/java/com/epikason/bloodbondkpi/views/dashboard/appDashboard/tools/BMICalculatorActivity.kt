@@ -11,63 +11,91 @@ import com.epikason.bloodbondkpi.databinding.ActivityBmicalculatorBinding
 import kotlin.math.roundToInt
 
 class BMICalculatorActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityBmicalculatorBinding
+    private val feetToMeter = 0.3048f
+    private val MAX_BMI = 40f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBmicalculatorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val feetToMeter = 0.3048f
-
         binding.calcButton.setOnClickListener {
-            val weightKg = binding.weightInput.text.toString().toFloatOrNull()
-            val heightFeet = binding.heightInput.text.toString().toFloatOrNull() // feet input
-
-            // Input validation
-            if (weightKg == null || weightKg <= 0f || heightFeet == null || heightFeet <= 0f) {
-                Toast.makeText(this, "Enter valid positive numbers", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            // Convert height to meters
-            val heightM = heightFeet * feetToMeter
-
-            // Calculate BMI
-            val bmi = weightKg / (heightM * heightM)
-            val bmiRounded = String.format("%.2f", bmi)
-
-            // Determine BMI category, advice, risk, color, emoji
-            val (category, advice, risk, color, emoji) = when {
-                bmi < 18.5 -> Quint("Underweight", "Eat more nutritious food 🍎", "Low Risk", 0xFF03A9F4.toInt(), "⚠️")
-                bmi in 18.5..24.9 -> Quint("Normal", "Maintain your healthy lifestyle 🏃‍♂️", "Low Risk", 0xFF4CAF50.toInt(), "✅")
-                bmi in 25.0..29.9 -> Quint("Overweight", "Exercise regularly and control diet 🏋️‍♂️", "Moderate Risk", 0xFFFFC107.toInt(), "⚠️")
-                else -> Quint("Obese", "Consult doctor and improve lifestyle 🩺", "High Risk", 0xFFF44336.toInt(), "❌")
-            }
-
-            // Animate result card color
-            val colorAnim = ValueAnimator.ofObject(ArgbEvaluator(), Color.WHITE, color)
-            colorAnim.duration = 500
-            colorAnim.addUpdateListener { animator ->
-                binding.resultCard.setCardBackgroundColor(animator.animatedValue as Int)
-            }
-            colorAnim.start()
-
-            // Show result card
-            binding.resultCard.visibility = View.VISIBLE
-
-            // Animate BMI text counter
-            animateBMICounter(bmiRounded.toFloat())
-
-            // Update category, advice, risk
-            binding.bmiCategory.text = "$emoji $category"
-            binding.bmiAdvice.text = advice
-            binding.bmiRisk.text = "Risk Level: $risk"
-
-            // Update progress bar (max BMI considered 40)
-            val progress = ((bmi.coerceAtMost(40f) / 40f) * 100).roundToInt()
-            binding.bmiProgress.setProgress(progress, true)
+            calculateBMI()
         }
+    }
+
+    private fun calculateBMI() {
+        val weightKg = binding.weightInput.text.toString().toFloatOrNull()
+        val heightFeet = binding.heightInput.text.toString().toFloatOrNull()
+
+        if (weightKg == null || weightKg <= 0f || heightFeet == null || heightFeet <= 0f) {
+            Toast.makeText(this, "Enter valid positive numbers", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val heightMeter = heightFeet * feetToMeter
+        val bmi = weightKg / (heightMeter * heightMeter)
+        val bmiRounded = String.format("%.2f", bmi).toFloat()
+
+        val quint = getBMICategory(bmi)
+
+        animateCardColor(quint.color)
+        animateBMICounter(bmiRounded)
+
+        binding.resultCard.visibility = View.VISIBLE
+        binding.bmiCategory.text = "${quint.emoji} ${quint.category}"
+        binding.bmiAdvice.text = quint.advice
+        binding.bmiRisk.text = "Risk Level: ${quint.risk}"
+
+        val progress = ((bmi.coerceAtMost(MAX_BMI) / MAX_BMI) * 100).roundToInt()
+        binding.bmiProgress.setProgress(progress, true)
+    }
+
+    private fun getBMICategory(bmi: Float): Quint {
+        return when {
+            bmi < 18.5 -> Quint(
+                "Underweight",
+                "Eat more nutritious food 🍎",
+                "Low Risk",
+                0xFF03A9F4.toInt(),
+                "⚠️"
+            )
+
+            bmi in 18.5..24.9 -> Quint(
+                "Normal",
+                "Maintain your healthy lifestyle 🏃‍♂️",
+                "Low Risk",
+                0xFF4CAF50.toInt(),
+                "✅"
+            )
+
+            bmi in 25.0..29.9 -> Quint(
+                "Overweight",
+                "Exercise regularly and control diet 🏋️‍♂️",
+                "Moderate Risk",
+                0xFFFFC107.toInt(),
+                "⚠️"
+            )
+
+            else -> Quint(
+                "Obese",
+                "Consult doctor and improve lifestyle 🩺",
+                "High Risk",
+                0xFFF44336.toInt(),
+                "❌"
+            )
+        }
+    }
+
+    private fun animateCardColor(color: Int) {
+        val colorAnim = ValueAnimator.ofObject(ArgbEvaluator(), Color.WHITE, color)
+        colorAnim.duration = 500
+        colorAnim.addUpdateListener { animator ->
+            binding.resultCard.setCardBackgroundColor(animator.animatedValue as Int)
+        }
+        colorAnim.start()
     }
 
     private fun animateBMICounter(finalBMI: Float) {

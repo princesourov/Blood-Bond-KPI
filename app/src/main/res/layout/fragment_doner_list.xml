@@ -16,7 +16,6 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2">
-
             <Spinner
                 android:id="@+id/spinnerBloodGroup"
                 android:layout_width="0dp"

@@ -139,6 +139,7 @@
             android:layout_marginTop="@dimen/_2sdp"
             android:ellipsize="end"
             android:singleLine="true"
+            android:textStyle="bold"
             android:text="Location: Kurigram Shodor Hospital"
             android:textColor="@color/white"
             android:textSize="@dimen/_13ssp" />
