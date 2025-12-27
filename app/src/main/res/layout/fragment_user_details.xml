@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:background="@color/white"
     android:padding="16dp"
     tools:context=".views.auth.userDetail.UserDetailsFragment">
 
@@ -101,7 +102,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etSeason"
                     android:layout_width="match_parent"
-                    android:inputType="text"
+                    android:inputType="number|text"
                     android:layout_height="@dimen/_55sdp"
                     android:imeOptions="actionNext" />
             </com.google.android.material.textfield.TextInputLayout>

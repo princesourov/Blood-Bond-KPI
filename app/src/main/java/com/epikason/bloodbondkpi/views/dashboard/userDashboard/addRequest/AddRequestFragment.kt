@@ -107,61 +107,51 @@ class AddRequestFragment :
         }
     }
 
-
     private fun setupSubmit() {
-        binding.btnSubmitRequest.setOnClickListener {
+        with(binding) {
+            btnSubmitRequest.setOnClickListener {
+                spinnerBloodGroup.isEmpty()
+                etUnits.isEmpty()
+                etPatientName.isEmpty()
+                etHospitalName.isEmpty()
+                etDate.isEmpty()
+                etTime.isEmpty()
+                etReason.isEmpty()
+                spinnerEmergency.isEmpty()
+                etPhone.isEmpty()
 
-            binding.spinnerBloodGroup.isEmpty()
-            binding.etUnits.isEmpty()
-            binding.etPatientName.isEmpty()
-            binding.etHospitalName.isEmpty()
-            binding.etDate.isEmpty()
-            binding.etTime.isEmpty()
-            binding.etReason.isEmpty()
-            binding.spinnerEmergency.isEmpty()
-            binding.etPhone.isEmpty()
+                if (userName.isEmpty()) {
+                    Toast.makeText(requireContext(), "User data not loaded yet", Toast.LENGTH_SHORT)
+                        .show()
+                    return@setOnClickListener
+                }
 
-            if (userName.isEmpty()) {
-                Toast.makeText(requireContext(), "User data not loaded yet", Toast.LENGTH_SHORT)
-                    .show()
-                return@setOnClickListener
-            }
-
-            if (
-                !binding.spinnerBloodGroup.isEmpty() &&
-                !binding.etUnits.isEmpty() &&
-                !binding.etPatientName.isEmpty() &&
-                !binding.etHospitalName.isEmpty() &&
-                !binding.etDate.isEmpty() &&
-                !binding.etTime.isEmpty() &&
-                !binding.etReason.isEmpty() &&
-                !binding.spinnerEmergency.isEmpty() &&
-                !binding.etPhone.isEmpty()
-            ) {
-
-                val request = BloodRequest(
-                    binding.spinnerBloodGroup.extract(),
-                    binding.etUnits.extract(),
-                    binding.etPatientName.extract(),
-                    binding.etHospitalName.extract(),
-                    binding.etDate.extract(),
-                    binding.etTime.extract(),
-                    binding.etReason.extract(),
-                    binding.spinnerEmergency.extract(),
-                    binding.etPhone.extract(),
-                    userName,
-                    userEmail,
-                    userMobile,
-                    userDepartment,
-                    userSeason,
-                    userRoll,
-                    bloodGroup,
-                    gender,
-                    autoDate,
-                    autoTime,
-                    uid
-                )
-                viewModel.addRequest(request)
+                if (!spinnerBloodGroup.isEmpty() && !etUnits.isEmpty() && !etPatientName.isEmpty() && !etHospitalName.isEmpty() && !etDate.isEmpty() &&
+                    !etTime.isEmpty() && !etReason.isEmpty() && !spinnerEmergency.isEmpty() && !etPhone.isEmpty()) {
+                    val request = BloodRequest(
+                        binding.spinnerBloodGroup.extract(),
+                        binding.etUnits.extract(),
+                        binding.etPatientName.extract(),
+                        binding.etHospitalName.extract(),
+                        binding.etDate.extract(),
+                        binding.etTime.extract(),
+                        binding.etReason.extract(),
+                        binding.spinnerEmergency.extract(),
+                        binding.etPhone.extract(),
+                        userName,
+                        userEmail,
+                        userMobile,
+                        userDepartment,
+                        userSeason,
+                        userRoll,
+                        bloodGroup,
+                        gender,
+                        autoDate,
+                        autoTime,
+                        uid
+                    )
+                    viewModel.addRequest(request)
+                }
             }
         }
     }
@@ -217,6 +207,7 @@ class AddRequestFragment :
             }
         }
     }
+
     private fun getCurrentDate(): String {
         val cal = Calendar.getInstance()
         val day = cal.get(Calendar.DAY_OF_MONTH)
@@ -232,7 +223,6 @@ class AddRequestFragment :
 
         val amPm = if (hour >= 12) "PM" else "AM"
         val hour12 = if (hour % 12 == 0) 12 else hour % 12
-
         return String.format("%02d:%02d %s", hour12, minute, amPm)
     }
 
