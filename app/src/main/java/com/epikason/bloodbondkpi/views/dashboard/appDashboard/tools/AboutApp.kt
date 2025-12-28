@@ -39,6 +39,9 @@ class AboutApp : AppCompatActivity() {
             icWebsite.setOnClickListener {
                 openUrl("https://epikason.weebly.com")
             }
+            powerByPage.setOnClickListener {
+                openUrl("https://www.facebook.com/MSInnovationsOfficials")
+            }
         }
     }
 }

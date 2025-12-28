@@ -24,10 +24,11 @@
             android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="BMI ক্যালকুলেটর"
-            android:textColor="#000000"
-            android:textSize="24sp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:text="BMI Calculator"
+            android:textColor="#3F51B5"
+            android:fontFamily="@font/baloo"
+            android:textSize="@dimen/_24ssp"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -35,11 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:hint="Weight (kg)"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusTopStart="16dp"
-            app:boxCornerRadiusTopEnd="16dp"
-            app:boxCornerRadiusBottomStart="16dp"
-            app:boxCornerRadiusBottomEnd="16dp">
+            app:boxBackgroundMode="outline">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/weightInput"
@@ -48,24 +45,18 @@
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Height (Feet + Inch) -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <!-- Feet -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Feet"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp">
+                app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/feetInput"
@@ -78,17 +69,12 @@
                 android:layout_width="12dp"
                 android:layout_height="wrap_content"/>
 
-            <!-- Inch -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Inch (0–11)"
-                app:boxBackgroundMode="outline"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp">
+                android:hint="Inch"
+                app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inchInput"
@@ -99,18 +85,19 @@
 
         </LinearLayout>
 
-        <!-- Calculate Button -->
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/calcButton"
-            android:layout_width="200dp"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:backgroundTint="#3F51B5"
             android:text="Calculate BMI"
-            app:cornerRadius="24dp"
-            app:backgroundTint="#3F51B5"
-            android:textColor="@android:color/white"/>
+            android:textStyle="bold" />
 
-        <!-- Circular Progress -->
+
         <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/bmiProgress"
             android:layout_width="120dp"
@@ -119,7 +106,7 @@
             app:indicatorColor="#3F51B5"
             app:trackColor="#E0E0E0"/>
 
-        <!-- Result Card -->
+
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/resultCard"
             android:layout_width="match_parent"
