@@ -50,37 +50,41 @@ class AllBloodRequestAdapter(private val requestBloodList: List<BloodRequest>)
             tvPostDate.text = "Post Date: ${item.postDate}"
             tvPostTime.text = "Post Time: ${item.postTime}"
 
-            tvGoUserInfo.setOnClickListener {
-                bloodRequestCard.animate()
-                    .alpha(0f)
-                    .setDuration(200)
-                    .withEndAction {
-                        bloodRequestCard.visibility = View.GONE
-                        userInfoCard.alpha = 0f
-                        userInfoCard.visibility = View.VISIBLE
-                        userInfoCard.animate()
-                            .alpha(1f)
-                            .setDuration(200)
-                            .start()
-                    }
-                    .start()
-            }
-            tvGoPost.setOnClickListener {
-                userInfoCard.animate()
-                    .alpha(0f)
-                    .setDuration(200)
-                    .withEndAction {
-                        userInfoCard.visibility = View.GONE
-                        bloodRequestCard.alpha = 0f
-                        bloodRequestCard.visibility = View.VISIBLE
-                        bloodRequestCard.animate()
-                            .alpha(1f)
-                            .setDuration(200)
-                            .start()
-                    }
-                    .start()
-            }
+            var isBloodCardVisible = true
 
+            root.setOnClickListener {
+                if (isBloodCardVisible) {
+                    bloodRequestCard.animate()
+                        .alpha(0f)
+                        .setDuration(200)
+                        .withEndAction {
+                            bloodRequestCard.visibility = View.GONE
+                            userInfoCard.alpha = 0f
+                            userInfoCard.visibility = View.VISIBLE
+                            userInfoCard.animate()
+                                .alpha(1f)
+                                .setDuration(200)
+                                .start()
+                        }
+                        .start()
+                } else {
+                    userInfoCard.animate()
+                        .alpha(0f)
+                        .setDuration(200)
+                        .withEndAction {
+                            userInfoCard.visibility = View.GONE
+                            bloodRequestCard.alpha = 0f
+                            bloodRequestCard.visibility = View.VISIBLE
+                            bloodRequestCard.animate()
+                                .alpha(1f)
+                                .setDuration(200)
+                                .start()
+                        }
+                        .start()
+                }
+
+                isBloodCardVisible = !isBloodCardVisible
+            }
 
             btnCall.setOnClickListener {
                 val intent = Intent(Intent.ACTION_DIAL).apply {

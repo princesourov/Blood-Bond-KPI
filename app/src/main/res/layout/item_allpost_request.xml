@@ -162,7 +162,7 @@
             android:textStyle="bold" />
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp">
 
@@ -183,18 +183,6 @@
                 android:text="01300156566"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_12ssp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvGoUserInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:text="post Info"
-                android:textAllCaps="true"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_14ssp"
                 android:textStyle="bold" />
         </RelativeLayout>
     </LinearLayout>
@@ -342,32 +330,14 @@
             android:textSize="@dimen/_12ssp"
             android:textStyle="bold" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tvUserGender"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_2sdp">
-
-            <TextView
-                android:id="@+id/tvUserGender"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gender : Male"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/_12ssp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/tvGoPost"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:text="POST"
-                android:textColor="@color/primary_color"
-                android:textSize="@dimen/_14ssp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
+            android:text="Gender : Male"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold" />
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
