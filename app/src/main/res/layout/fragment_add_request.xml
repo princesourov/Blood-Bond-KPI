@@ -194,6 +194,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_48sdp"
                 android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:autofillHints=""
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 

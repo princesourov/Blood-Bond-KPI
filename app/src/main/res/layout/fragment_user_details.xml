@@ -145,6 +145,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_58sdp"
                     android:imeOptions="actionNext"
+                    android:importantForAutofill="no"
+                    android:autofillHints=""
                     android:inputType="number"
                     android:paddingStart="@dimen/_10sdp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -165,6 +167,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_55sdp"
                 android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:autofillHints=""
                 android:inputType="phone" />
         </com.google.android.material.textfield.TextInputLayout>
 
